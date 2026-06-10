@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -6,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/home.css" />
+    <script src="../js/home.js" defer></script>
+    
 </head>
 
 <body>
@@ -14,7 +15,8 @@
 
         <!-- Banner -->
         <section class="hero">
-            <img src="../assets/image/baner_home.png" alt="Giới trẻ và giải pháp">
+            <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996494/image_13_p1rx03.png"
+                alt="Giới trẻ và giải pháp">
         </section>
         <section class="intro-text">
             <div class="intro-container">
@@ -42,7 +44,7 @@
 
             <div class="video-box">
                 <video controls poster="../assets/image/video-cover.png">
-                    <source src="../assets/image/0606.mov" type="video/mp4">
+                    <source src="https://res.cloudinary.com/dkmudlfal/video/upload/0606_iixbk6.mp4" type="video/mp4">
                     Trình duyệt của bạn không hỗ trợ video.
                 </video>
             </div>
@@ -65,7 +67,6 @@
             </p>
         </section>
 
-        <!-- Section 02 -->
         <!-- Section 02 -->
         <section class="section section-test">
             <div class="section-header">
@@ -94,8 +95,8 @@
 
                         <p class="note-text">
                             <strong>Lưu ý:</strong> Kết quả và các giải pháp đề xuất chỉ mang tính tham khảo đối với
-                            tình trạng mất tập trung
-                            ở mức độ nhẹ, phổ biến; không dùng để đánh giá hay chẩn đoán bất kỳ vấn đề cá nhân nào.
+                            tình trạng mất tập trung ở mức độ nhẹ, phổ biến; không dùng để đánh giá hay chẩn đoán bất kỳ
+                            vấn đề cá nhân nào.
                         </p>
                     </div>
                 </div>
@@ -112,43 +113,61 @@
                         <div>Hiếm khi</div>
                         <div>Không bao giờ</div>
 
+                        <!-- 1 -->
                         <div class="question">1. Công nghệ và mạng xã hội</div>
-                        <label><input type="radio" name="q1"></label>
-                        <label><input type="radio" name="q1"></label>
-                        <label><input type="radio" name="q1"></label>
-                        <label><input type="radio" name="q1"></label>
-                        <label><input type="radio" name="q1"></label>
+                        <label><input type="radio" name="q1" value="very" data-factor="tech"></label>
+                        <label><input type="radio" name="q1" value="often" data-factor="tech"></label>
+                        <label><input type="radio" name="q1" value="sometimes" data-factor="tech"></label>
+                        <label><input type="radio" name="q1" value="rarely" data-factor="tech"></label>
+                        <label><input type="radio" name="q1" value="never" data-factor="tech"></label>
 
+                        <!-- 2 -->
                         <div class="question">2. Môi trường và tác động xã hội</div>
-                        <label><input type="radio" name="q2"></label>
-                        <label><input type="radio" name="q2"></label>
-                        <label><input type="radio" name="q2"></label>
-                        <label><input type="radio" name="q2"></label>
-                        <label><input type="radio" name="q2"></label>
+                        <label><input type="radio" name="q2" value="very" data-factor="social"></label>
+                        <label><input type="radio" name="q2" value="often" data-factor="social"></label>
+                        <label><input type="radio" name="q2" value="sometimes" data-factor="social"></label>
+                        <label><input type="radio" name="q2" value="rarely" data-factor="social"></label>
+                        <label><input type="radio" name="q2" value="never" data-factor="social"></label>
 
+                        <!-- 3 -->
                         <div class="question">3. Tâm lý và áp lực cuộc sống</div>
-                        <label><input type="radio" name="q3"></label>
-                        <label><input type="radio" name="q3"></label>
-                        <label><input type="radio" name="q3"></label>
-                        <label><input type="radio" name="q3"></label>
-                        <label><input type="radio" name="q3"></label>
+                        <label><input type="radio" name="q3" value="very" data-factor="pressure"></label>
+                        <label><input type="radio" name="q3" value="often" data-factor="pressure"></label>
+                        <label><input type="radio" name="q3" value="sometimes" data-factor="pressure"></label>
+                        <label><input type="radio" name="q3" value="rarely" data-factor="pressure"></label>
+                        <label><input type="radio" name="q3" value="never" data-factor="pressure"></label>
 
+                        <!-- 4 -->
                         <div class="question">4. Thói quen và lối sống cá nhân</div>
-                        <label><input type="radio" name="q4"></label>
-                        <label><input type="radio" name="q4"></label>
-                        <label><input type="radio" name="q4"></label>
-                        <label><input type="radio" name="q4"></label>
-                        <label><input type="radio" name="q4"></label>
+                        <label><input type="radio" name="q4" value="very" data-factor="habit"></label>
+                        <label><input type="radio" name="q4" value="often" data-factor="habit"></label>
+                        <label><input type="radio" name="q4" value="sometimes" data-factor="habit"></label>
+                        <label><input type="radio" name="q4" value="rarely" data-factor="habit"></label>
+                        <label><input type="radio" name="q4" value="never" data-factor="habit"></label>
 
+                        <!-- 5 -->
                         <div class="question">5. Kỹ năng quản lý bản thân</div>
-                        <label><input type="radio" name="q5"></label>
-                        <label><input type="radio" name="q5"></label>
-                        <label><input type="radio" name="q5"></label>
-                        <label><input type="radio" name="q5"></label>
-                        <label><input type="radio" name="q5"></label>
+                        <label><input type="radio" name="q5" value="very" data-factor="skill"></label>
+                        <label><input type="radio" name="q5" value="often" data-factor="skill"></label>
+                        <label><input type="radio" name="q5" value="sometimes" data-factor="skill"></label>
+                        <label><input type="radio" name="q5" value="rarely" data-factor="skill"></label>
+                        <label><input type="radio" name="q5" value="never" data-factor="skill"></label>
                     </div>
                 </div>
             </div>
+
+            <!-- KẾT QUẢ PHẢI NẰM NGOÀI test-wrap -->
+            <div id="survey-result" class="survey-result">
+
+                <div id="result-list"></div>
+
+                <button id="show-solution-btn" class="solution-btn">
+                    Xem giải pháp phù hợp
+                </button>
+
+            </div>
+            <div id="solution-content" class="solution-content"></div>
+            <div class="audio-card"></div>
         </section>
 
         <!-- Section 03 -->
@@ -171,7 +190,9 @@
             <h3 class="sub-title">
                 MỨC ĐỘ MẤT TẬP TRUNG MÀ GIỚI TRẺ THƯỜNG GẶP
             </h3>
-            <img class="content-img" src="../assets/image/Biểu đồ.png" alt="Biểu đồ">
+            <img class="content-img"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996762/ChatGPT_Image_Jun_7_2026_11_33_10_PM_1_ej50fa.png"
+                alt="Biểu đồ">
 
             <p class="text">
                 Số liệu cho thấy tình trạng mất tập trung khi học/làm việc diễn ra khá phổ biến. Nhóm thường xuyên mất
@@ -192,7 +213,9 @@
             <h3 class="sub-title">
                 Điều gì khiến giới trẻ ngày càng xao nhãng?
             </h3>
-            <img class="content-img" src="../assets/image/thủ phạm.png" alt="Bảng xếp hạng">
+            <img class="content-img"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996710/ChatGPT_Image_Jun_7_2026_06_25_33_PM_1_gejcpe.png"
+                alt="Bảng xếp hạng">
 
             <p class="text">
                 Kết quả khảo sát cho thấy công nghệ và mạng xã hội là nguyên nhân lớn nhất gây mất tập trung ở người
@@ -227,14 +250,18 @@
                 thời gian dài. Điều đó ảnh hưởng trực tiếp đến hiệu suất học tập, công việc cũng như cảm giác hài lòng
                 với những mục tiêu bản thân đặt ra. Chia sẻ về vấn đề này, chuyên gia tâm lý nhận định:
             </p>
-            <img class="content-img" src="../assets/image/Câu hỏi.png" alt="Câu Hỏi">
+            <img class="content-img"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996564/C%C3%A2u_H%E1%BB%8Fi_nt2nyu.png"
+                alt="Câu Hỏi">
             <p class="text">
                 Những tác động đối với học tập và công việc chỉ là một phần của bức tranh lớn hơn. Đằng sau những lần
                 trì hoãn, những công việc dang dở hay cảm giác khó tập trung là những thay đổi trong cách con người quản
                 lý cảm xúc, duy trì động lực và xây dựng thói quen hằng ngày. Theo nhận định của Chuyên gia tâm lý
                 Steven Nguyễn (Tốt nghiệp chuyên ngành Tâm lý học, Đại học Jacobs Bremen - Đức)
             </p>
-            <img class="focus-image" src="../assets/image/Sự tập trung.png" alt="sự tập trung">
+            <img class="focus-image"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996815/S%E1%BB%B1_t%E1%BA%ADp_trung_v6pns8.png"
+                alt="sự tập trung">
 
 
 
@@ -293,5 +320,6 @@
     </main>
 
 </body>
+
 
 </html>
