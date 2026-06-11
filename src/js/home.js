@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultList = document.getElementById("result-list");
     const solutionBtn = document.getElementById("show-solution-btn");
     const solutionContent = document.getElementById("solution-content");
+    let currentSolution = null;
 
     const results = {
         tech: "👉 Công nghệ và mạng xã hội: Khảo sát do nhóm thực hiện trên 362 người cho thấy, có 196 người, tương đương 54,14% số người tham gia cũng đang gặp tình trạng giống bạn; họ rất thường xuyên chịu tác động từ công nghệ và mạng xã hội đến khả năng tập trung trong học tập, công việc và sinh hoạt hằng ngày.",
@@ -136,7 +137,6 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
         Những lợi ích nổi bật của co-working space có thể kể đến như: không gian yên tĩnh, wifi ổn định, ghế ngồi công thái học, bàn làm việc phù hợp và môi trường tập trung cao. Nhờ đó, bạn có thể học tập, làm việc trong thời gian dài mà vẫn cảm thấy thoải mái và hiệu quả hơn.</p>
 
 
-
 <div class="momento360-grid">
     <div class="momento360-item">
         <iframe
@@ -152,6 +152,9 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
             frameborder="0"
             allowfullscreen>
         </iframe>
+    </div>
+    <div class="momento360-item">
+<iframe src="https://momento360.com/e/u/c3dbb70176884563a8b16f0a8b12601c?utm_campaign=embed&amp;utm_source=other&amp;utm_medium=embed&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium&amp;display-plan=true" width="900" height="450" frameborder="0" allowfullscreen="true" marginheight="0" marginwidth="0"></iframe>
     </div>
 </div>
 
@@ -171,18 +174,185 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
         `,
 
         pressure: `
-            <h3>Giải pháp: Tâm lý và áp lực cuộc sống</h3>
-            <p>Viết nội dung giải pháp của mục này ở đây.</p>
+            <h3>Giải pháp:  THIỀN - TẬP TRUNG TỪ SỰ TĨNH LẶNG</h3>
+           <div class="expert-quote-section">
+    <div class="expert-quote-frame">
+        <div class="expert-quote-card">
+            <span class="quote-mark quote-left">“</span>
+
+            <p>
+                Khi tình trạng mất tập trung diễn ra thường xuyên và kéo dài, giới trẻ cần ưu tiên rèn luyện
+                các kỹ năng ổn định cảm xúc và lấy lại sự tập trung. Một trong những cách hiệu quả là thực hành
+                các kỹ thuật hít thở sâu. Chẳng hạn phương pháp thiền định, hít vào – nín thở – thở ra hay
+                phương pháp 5-5 (hít vào – nín thở – thở ra – nín thở, mỗi bước 5 giây). Việc kết nối lại với
+                cơ thể thông qua hơi thở giúp điều hòa cảm xúc, giảm sự phân tán chú ý và đưa tâm trí trở lại
+                với công việc hoặc việc học đang thực hiện.
+            </p>
+
+            <span class="quote-mark quote-right">”</span>
+        </div>
+
+        <div class="quote-line"></div>
+
+        <p class="quote-author">
+            ThS.BS Nguyễn Thanh Trúc, công tác tại Khoa Tâm lý lâm sàng,<br>
+            Bệnh viện Tâm thần Trung ương 2 (Đồng Nai).
+        </p>
+    </div>
+</div>
+   <h4>“Thiền là gì?”</h4>
+   <p>
+   Khi nhắc đến thiền, nhiều người thường liên tưởng đến những khoảng lặng tuyệt đối hay hình ảnh ngồi nhắm mắt giữa không gian tĩnh mịch. Tuy nhiên, thiền không chỉ là một tư thế hay một nghi thức mang màu sắc tôn giáo. Trong Phật giáo, thiền được xem là một phần của quá trình tu tập, giúp con người giữ tâm trí tĩnh lặng và quan sát bản thân rõ ràng hơn.
+   </p>
+   <p>
+   Trong cuốn Thiền là gì?, Jiddu Krishnamurti cho rằng thiền là “nhìn thế giới như nó đang là, chứ không phải như ta muốn nó phải là”. Theo cách hiểu phổ biến hiện nay, thiền là quá trình đưa sự chú ý trở về hiện tại thông qua hơi thở, cảm giác cơ thể hoặc việc quan sát suy nghĩ một cách tỉnh thức.
+   <p/>
+   <p>
+   Ngày nay, thiền không chỉ gắn với đời sống tâm linh mà còn dần trở thành một phương pháp được nhiều người lựa chọn để giảm căng thẳng và tìm lại sự tập trung giữa nhịp sống hiện đại nhiều xao nhãng. Trong bối cảnh điện thoại, mạng xã hội và lượng thông tin liên tục bủa vây, nhu cầu tìm kiếm những khoảng nghỉ cho tâm trí cũng ngày càng phổ biến, đặc biệt ở người trẻ.
+   </p>
+   <h4>
+Thiền chánh niệm là gì?
+   </h4>
+   <p>
+Thiền chánh niệm là phương pháp giúp rèn luyện khả năng duy trì sự tập trung bằng cách hướng sự chú ý vào hiện tại, như hơi thở hoặc cảm nhận cơ thể. Thay vì cố loại bỏ suy nghĩ, người tập học cách nhận ra sự xao nhãng rồi nhẹ nhàng đưa tâm trí trở lại trạng thái tập trung. Nhiều chuyên gia cho rằng phương pháp này có thể hỗ trợ cải thiện sự tập trung, giảm căng thẳng và điều tiết cảm xúc.
+   </p>
+
+<h4>
+Cách thực hành thiền chánh niệm đơn giản:
+</h4>
+<p>
+Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải mái, giữ lưng thẳng và thả lỏng cơ thể. Không cần cố gắng kiểm soát suy nghĩ hay ép bản thân phải “trống rỗng”.
+</p>
+<p>
+- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:
+</p>
+<p>
+- Hít vào bằng mũi trong khoảng 4 giây
+</p>
+<p>
+- Giữ nhẹ 1–2 giây
+</p>
+<p>
+- Thở ra chậm bằng mũi hoặc miệng trong khoảng 4–6 giây
+</p>
+<p>
+Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước khi tăng thời gian luyện tập. Theo các chuyên gia về thiền và chánh niệm, điều quan trọng không nằm ở việc phải ngồi thiền trong bao lâu, mà là khả năng nhận ra khi tâm trí mất tập trung và đưa sự chú ý quay trở lại hiện tại.
+</p>
+<img class="focus-image"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781151206/image_15_1_n0ckat.png" alt="thiền">
+<h4>
+</br>
+“Tại sao khi mất tập trung, thiền lại giúp bạn tập trung trở lại?”
+</4>
+<div class="video-meditation">
+    <iframe
+        src="https://player.cloudinary.com/embed/?cloud_name=dkmudlfal&public_id=vid_thiền_khóa_luận_1_idlxjx"
+        width="100%"
+        height="500"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+
+
         `,
 
         habit: `
-            <h3>Giải pháp: Thói quen và lối sống cá nhân</h3>
-            <p>Viết nội dung giải pháp của mục này ở đây.</p>
+            <h3>Giải pháp: POMODORO - CHIA NHỎ ĐỂ HIỆU QUẢ</h3>
+            <p>
+                Xây dựng các chiến lược học tập khoa học được xem là một trong những giải pháp giúp cải thiện khả năng tập trung.
+                Trong đó, phương pháp Pomodoro được đánh giá cao nhờ khả năng giúp người học duy trì sự chú ý trong từng khoảng thời gian ngắn.
+                Chia sẻ về vấn đề này, NCS. ThS Nguyễn Đại Minh cho biết: 
+            </p>
+            <blockquote>
+                “Tôi khuyến nghị các bạn có thể thử áp dụng những việc chúng ta thay đổi về mặt môi trường sinh hoạt,... tận dụng các phương pháp như chia ra 80-20; và đặc biệt là phương pháp Pomodoro”
+                <br><strong>(NCS. ThS Nguyễn Đại Minh)</strong>
+            </blockquote>
+            <img
+        src="https://res.cloudinary.com/dkmudlfal/image/upload/f_auto,q_auto/cà_chua_2_jpeqap"
+        alt="Phương pháp Pomodoro"
+        class="solution-image"
+    >
         `,
 
         skill: `
-            <h3>Giải pháp: Kỹ năng quản lý bản thân</h3>
-            <p>Viết nội dung giải pháp của mục này ở đây.</p>
+            <h3>Giải pháp:  THIỀN - TẬP TRUNG TỪ SỰ TĨNH LẶNG</h3>
+             <div class="expert-quote-section">
+    <div class="expert-quote-frame">
+        <div class="expert-quote-card">
+            <span class="quote-mark quote-left">“</span>
+
+            <p>
+                Khi tình trạng mất tập trung diễn ra thường xuyên và kéo dài, giới trẻ cần ưu tiên rèn luyện
+                các kỹ năng ổn định cảm xúc và lấy lại sự tập trung. Một trong những cách hiệu quả là thực hành
+                các kỹ thuật hít thở sâu. Chẳng hạn phương pháp thiền định, hít vào – nín thở – thở ra hay
+                phương pháp 5-5 (hít vào – nín thở – thở ra – nín thở, mỗi bước 5 giây). Việc kết nối lại với
+                cơ thể thông qua hơi thở giúp điều hòa cảm xúc, giảm sự phân tán chú ý và đưa tâm trí trở lại
+                với công việc hoặc việc học đang thực hiện.
+            </p>
+
+            <span class="quote-mark quote-right">”</span>
+        </div>
+
+        <div class="quote-line"></div>
+
+        <p class="quote-author">
+            ThS.BS Nguyễn Thanh Trúc, công tác tại Khoa Tâm lý lâm sàng,<br>
+            Bệnh viện Tâm thần Trung ương 2 (Đồng Nai).
+        </p>
+    </div>
+</div>
+   <h4>“Thiền là gì?”</h4>
+   <p>
+   Khi nhắc đến thiền, nhiều người thường liên tưởng đến những khoảng lặng tuyệt đối hay hình ảnh ngồi nhắm mắt giữa không gian tĩnh mịch. Tuy nhiên, thiền không chỉ là một tư thế hay một nghi thức mang màu sắc tôn giáo. Trong Phật giáo, thiền được xem là một phần của quá trình tu tập, giúp con người giữ tâm trí tĩnh lặng và quan sát bản thân rõ ràng hơn.
+   </p>
+   <p>
+   Trong cuốn Thiền là gì?, Jiddu Krishnamurti cho rằng thiền là “nhìn thế giới như nó đang là, chứ không phải như ta muốn nó phải là”. Theo cách hiểu phổ biến hiện nay, thiền là quá trình đưa sự chú ý trở về hiện tại thông qua hơi thở, cảm giác cơ thể hoặc việc quan sát suy nghĩ một cách tỉnh thức.
+   <p/>
+   <p>
+   Ngày nay, thiền không chỉ gắn với đời sống tâm linh mà còn dần trở thành một phương pháp được nhiều người lựa chọn để giảm căng thẳng và tìm lại sự tập trung giữa nhịp sống hiện đại nhiều xao nhãng. Trong bối cảnh điện thoại, mạng xã hội và lượng thông tin liên tục bủa vây, nhu cầu tìm kiếm những khoảng nghỉ cho tâm trí cũng ngày càng phổ biến, đặc biệt ở người trẻ.
+   </p>
+   <h4>
+Thiền chánh niệm là gì?
+   </h4>
+   <p>
+Thiền chánh niệm là phương pháp giúp rèn luyện khả năng duy trì sự tập trung bằng cách hướng sự chú ý vào hiện tại, như hơi thở hoặc cảm nhận cơ thể. Thay vì cố loại bỏ suy nghĩ, người tập học cách nhận ra sự xao nhãng rồi nhẹ nhàng đưa tâm trí trở lại trạng thái tập trung. Nhiều chuyên gia cho rằng phương pháp này có thể hỗ trợ cải thiện sự tập trung, giảm căng thẳng và điều tiết cảm xúc.
+   </p>
+
+<h4>
+Cách thực hành thiền chánh niệm đơn giản:
+</h4>
+<p>
+Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải mái, giữ lưng thẳng và thả lỏng cơ thể. Không cần cố gắng kiểm soát suy nghĩ hay ép bản thân phải “trống rỗng”.
+</p>
+<p>
+- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:
+</p>
+<p>
+- Hít vào bằng mũi trong khoảng 4 giây
+</p>
+<p>
+- Giữ nhẹ 1–2 giây
+</p>
+<p>
+- Thở ra chậm bằng mũi hoặc miệng trong khoảng 4–6 giây
+</p>
+<p>
+Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước khi tăng thời gian luyện tập. Theo các chuyên gia về thiền và chánh niệm, điều quan trọng không nằm ở việc phải ngồi thiền trong bao lâu, mà là khả năng nhận ra khi tâm trí mất tập trung và đưa sự chú ý quay trở lại hiện tại.
+</p>
+<img class="focus-image"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781151206/image_15_1_n0ckat.png" alt="thiền">
+</br>
+<h4>
+“Tại sao khi mất tập trung, thiền lại giúp bạn tập trung trở lại?”
+</4>
+<div class="video-meditation">
+    <iframe
+        src="https://player.cloudinary.com/embed/?cloud_name=dkmudlfal&public_id=vid_thiền_khóa_luận_1_idlxjx"
+        width="100%"
+        height="500"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
         `
     };
 
@@ -243,6 +413,55 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
         solutionContent.classList.remove("show");
     }
 
+    const methodInfo = {
+        pomodoro: { label: "POMODORO - CHIA NHỎ ĐỂ HIỆU QUẢ", factor: "tech" },
+        newSpace: { label: "KHÔNG GIAN MỚI - HIỆU QUẢ MỚI", factor: "social" },
+        meditation: { label: "THIỀN - TẬP TRUNG TỪ SỰ TĨNH LẶNG", factor: "pressure" }
+    };
+
+    const factorToMethod = {
+        tech: "pomodoro",
+        social: "newSpace",
+        pressure: "meditation",
+        habit: "pomodoro",
+        skill: "meditation"
+    };
+
+    function renderSolution(methodKey) {
+        currentSolution = methodKey;
+        const methodFactor = methodInfo[methodKey]?.factor;
+        if (!methodFactor || !solutions[methodFactor]) return;
+
+        solutionContent.innerHTML = solutions[methodFactor];
+        solutionContent.classList.add("show");
+
+        const optionSection = document.createElement("div");
+        optionSection.className = "method-options";
+        optionSection.innerHTML = `<h4>Các phương pháp khác bạn có thể tham khảo:</h4>`;
+
+        const optionList = document.createElement("div");
+        optionList.className = "method-options-list";
+
+        Object.keys(methodInfo)
+            .filter(key => key !== methodKey)
+            .forEach(key => {
+                const optionButton = document.createElement("button");
+                optionButton.type = "button";
+                optionButton.className = "method-option-btn";
+                optionButton.textContent = methodInfo[key].label;
+                optionButton.addEventListener("click", () => renderSolution(key));
+                optionList.appendChild(optionButton);
+            });
+
+        optionSection.appendChild(optionList);
+        solutionContent.appendChild(optionSection);
+
+        solutionContent.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
     solutionBtn.addEventListener("click", () => {
         const veryRadio = [...radios].find(
             radio => radio.checked && radio.value === "very"
@@ -250,15 +469,10 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
 
         if (!veryRadio) return;
 
-        const factor = veryRadio.dataset.factor;
+        const methodKey = factorToMethod[veryRadio.dataset.factor];
+        if (!methodKey) return;
 
-        solutionContent.innerHTML = solutions[factor];
-        solutionContent.classList.add("show");
-
-        solutionContent.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+        renderSolution(methodKey);
     });
 
 
@@ -286,6 +500,6 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
     });
 
 
-    
+
 
 });

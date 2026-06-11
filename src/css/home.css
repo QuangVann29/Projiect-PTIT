@@ -345,6 +345,105 @@ body {
     background: #1d4d38;
     transform: translateY(-2px);
 }
+
+.method-options {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px dashed rgba(20, 58, 42, 0.25);
+}
+
+.method-options h4 {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #143A2A;
+}
+
+.method-options-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.method-option-btn {
+    padding: 12px 24px;
+    border: 2px solid #143A2A;
+    background: #fff;
+    color: #143A2A;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.method-option-btn:hover {
+    background: #143A2A;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Nút xem phương pháp khác */
+.more-solutions-btn,
+.back-solution-btn {
+    display: block;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 28px;
+    background: #143A2A;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.more-solutions-btn:hover,
+.back-solution-btn:hover {
+    background: #1d4d38;
+    transform: translateY(-2px);
+}
+
+.method-options {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.method-options h4 {
+    margin-bottom: 22px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #143A2A;
+}
+
+.method-options-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.method-option-btn {
+    padding: 12px 24px;
+    background: #fff;
+    color: #143A2A;
+    border: 2px solid #143A2A;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.method-option-btn:hover {
+    background: #143A2A;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
 /* css giải pháp */
 /* GIẢI PHÁP */
 
@@ -697,7 +796,87 @@ body {
     border: 0;
     display: block;
 }
+/* thiền */
+/* THIỀN QUOTE */
+.expert-quote-section {
+    max-width: 860px;
+    margin: 50px auto;
+    padding: 14px;
+    background: #F4EEB0;
+}
 
+.expert-quote-frame {
+    padding: 18px;
+    background: #F4EEB0;
+    border: 1px solid rgba(255, 255, 255, .75);
+}
+
+.expert-quote-card {
+    position: relative;
+    background: #FFDE70;
+    border-radius: 16px;
+    padding: 42px 76px 36px;
+    text-align: center;
+}
+
+.expert-quote-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+.quote-mark {
+    position: absolute;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    color: #000;
+}
+
+.quote-left {
+    left: 18px;
+    top: 22px;
+}
+
+.quote-right {
+    right: 20px;
+    bottom: 14px;
+}
+
+.quote-line {
+    width: 260px;
+    height: 3px;
+    background: #000;
+    margin: 18px auto 10px;
+}
+
+.quote-author {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 800;
+    font-style: italic;
+    color: #000;
+    margin: 0;
+}
+.video-meditation{
+    width:100%;
+    max-width:900px;
+    margin:30px auto;
+    aspect-ratio:16 / 9;
+    border-radius:18px;
+    overflow:hidden;
+    background:#000;
+}
+
+.video-meditation iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
 
 
 /* MOBILE */
@@ -892,6 +1071,22 @@ body {
     .momento360-item {
         border-radius: 12px;
     }
+    /* thiền */
+    .expert-quote-section{
+        padding:20px;
+    }
+
+    .expert-quote-card{
+        padding:30px 20px;
+    }
+
+    .expert-quote-card p{
+        font-size:14px;
+    }
+
+    .quote-mark{
+        font-size:42px;
+    }
 
 }
 
@@ -971,6 +1166,8 @@ body {
     .note-content {
         font-size: 22px;
     }
+    /* thiền */
+    
 }
 
 /* DESKTOP */
