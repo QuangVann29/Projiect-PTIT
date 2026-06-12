@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p/>
             <div class="video-cafe">
             <video controls poster="../assets/image/video-cover.png">
-                                <source src="https://res.cloudinary.com/dkmudlfal/video/upload/0606_iixbk6.mp4" type="video/mp4">
+                                <source src="https://res.cloudinary.com/dkmudlfal/video/upload/v1781259366/0609_1_1_1_1_a5os3t.mp4" type="video/mp4">
                                 Trình duyệt của bạn không hỗ trợ video.
                             </video>
             </div>
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781073931/Rectangle_28_o1991q.png">
                   
                        </div>
-                       
+                       <h4 class="tile-img">Nguồn ảnh: D Free Book</h4>
 
             <p class="Space-tile">
             Giữa nhịp sống liên tục bị ngắt quãng bởi những thông báo, tin nhắn và màn hình điện tử, việc duy trì sự tập trung trong thời gian dài đang trở thành một thách thức đối với nhiều người trẻ. Trong bối cảnh đó, thư viện dần trở thành một trong số ít không gian còn giữ được sự tĩnh lặng cần thiết cho việc học tập, đọc sách và suy ngẫm. Tách biệt khỏi sự ồn ào của thế giới bên ngoài, nơi đây mang đến cảm giác chậm rãi và yên bình, giúp mỗi người có cơ hội tập trung trọn vẹn vào điều mình đang theo đuổi.
@@ -123,6 +123,7 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
         </p>
 
         <span>- Jorge Luis Borges -</span>
+         <h4 class="tile-img2">Nguồn ảnh: D Free Book</h4>
     </div>
 
 </div>
