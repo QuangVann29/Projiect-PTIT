@@ -233,6 +233,45 @@ body {
     color: #143A2A;
 }
 
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 8px rgba(20, 58, 42, 0.4), 0 0 16px rgba(20, 58, 42, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 12px rgba(20, 58, 42, 0.6), 0 0 24px rgba(20, 58, 42, 0.3), inset 0 0 8px rgba(20, 58, 42, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(20, 58, 42, 0.4), 0 0 16px rgba(20, 58, 42, 0.2);
+    }
+}
+
+.survey-action{
+    max-width: 1280px; /* bằng survey-result */
+    margin: 12px auto 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reset-survey-btn{
+    padding: 12px 28px;
+    background: #fff;
+    color: #143A2A;
+    border: 2px solid #143A2A;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .25s ease;
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+.reset-survey-btn:hover{
+    background: #143A2A;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px rgba(20,58,42,.8);
+}
+
 .survey-grid {
     display: grid;
     grid-template-columns: 300px repeat(5, 1fr);
@@ -291,7 +330,7 @@ body {
     /* background: #f8f8f1; */
     border-radius: 22px;
 
-    padding: 28px 34px;
+    /* padding: 28px 34px; */
     padding-bottom: 120px; /* chừa chỗ cho nút (tăng để phù hợp kích thước mới) */
 
     position: relative;
@@ -938,6 +977,25 @@ body {
 }
 
 /* Right-aligned variant for article credits */
+.author{
+    width: fit-content;
+    margin-left: 63%;
+    margin-top: 60px;
+    text-align: right;
+    color: #143A2A;
+}
+
+.author h4{
+    margin-bottom: 16px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.author p{
+    margin: 8px 0;
+    font-size: 18px;
+}
+
 .author-info.right {
     text-align: right;
     margin: 6px 0 24px 0;

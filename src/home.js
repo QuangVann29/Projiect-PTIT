@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultList = document.getElementById("result-list");
     const solutionBtn = document.getElementById("show-solution-btn");
     const solutionContent = document.getElementById("solution-content");
+    const resetBtn = document.getElementById("reset-survey-btn");
     let currentSolution = null;
 
     // Try to generate a poster image from the video's frame at 1 second.
@@ -226,9 +227,7 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
             allowfullscreen>
         </iframe>
     </div>
-    <div class="momento360-item">
-<iframe src="https://momento360.com/e/u/c3dbb70176884563a8b16f0a8b12601c?utm_campaign=embed&amp;utm_source=other&amp;utm_medium=embed&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium&amp;display-plan=true" width="900" height="450" frameborder="0" allowfullscreen="true" marginheight="0" marginwidth="0"></iframe>
-    </div>
+    
 </div>
 
 
@@ -431,6 +430,19 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             showResultWhenDone();
         });
     });
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+            radios.forEach(radio => {
+                radio.checked = false;
+                radio.disabled = false;
+            });
+            resultBox.style.display = "none";
+            solutionBtn.style.display = "none";
+            resultList.innerHTML = "";
+            hideSolution();
+        });
+    }
 
     function showResultWhenDone() {
         const checkedRadios = [...radios].filter(radio => radio.checked);
