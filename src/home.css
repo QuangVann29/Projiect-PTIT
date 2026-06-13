@@ -63,15 +63,15 @@ body {
 /* SECTION */
 .section {
     width: 100%;
-    padding: 40px 20px;
+    padding: 32px 20px;
     text-align: center;
 }
 
 .section-header {
     display: flex;
     align-items: center;
-    gap: 18px;
-    margin-bottom: 28px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .section-header span {
@@ -93,14 +93,14 @@ body {
     line-height: 1.15;
     font-weight: 800;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     color: #143A2A;
 }
 
 /* SUB TITLE */
 .sub-title {
     max-width: 1100px;
-    margin: 0 auto 28px;
+    margin: 0 auto 22px;
     font-size: 40px;
     font-weight: 800;
     line-height: 1.3;
@@ -914,6 +914,48 @@ body {
     color: #000;
     margin: 0;
 }
+
+/* Author info block (credits) */
+.author-info {
+    text-align: center;
+    color: #143A2A;
+    margin: 12px 0 24px;
+}
+
+.author-info p {
+    margin: 6px 0;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.author-info .date {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #333;
+}
+
+/* Right-aligned variant for article credits */
+.author-info.right {
+    text-align: right;
+    margin: 6px 0 24px 0;
+    max-width: 360px;
+    margin-left: auto;
+}
+
+.author-info.right p {
+    margin: 6px 0;
+}
+
+@media (max-width: 767px) {
+    .author-info.right {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
 .video-meditation{
     width:100%;
     max-width:900px;
@@ -1179,12 +1221,12 @@ body {
 /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
     .section {
-        padding: 60px 70px;
+        padding: 48px 70px;
     }
 
     .section-header {
         gap: 24px;
-        margin-bottom: 36px;
+        margin-bottom: 30px;
     }
 
     .section-header span {
@@ -1198,6 +1240,7 @@ body {
     .section h2 {
         font-size: 48px;
         line-height: 1.12;
+        margin-bottom: 18px;
     }
 
     .sub-title {
@@ -1259,12 +1302,12 @@ body {
 /* DESKTOP */
 @media (min-width: 1024px) {
     .section {
-        padding: 90px 5vw;
+        padding: 50px 5vw;
     }
 
     .section-header {
-        gap: 32px;
-        margin-bottom: 46px;
+        gap: 28px;
+        margin-bottom: 28px;
     }
 
     .section-header span {
@@ -1272,15 +1315,15 @@ body {
     }
 
     .section-number {
-        font-size: 150px;
+        font-size: 120px;
     }
 
     .section h2 {
-        font-size: 72px;
-        line-height: 1.1;
-        letter-spacing: -1px;
-        max-width: 1300px;
-        margin: 0 auto 36px;
+        font-size: 56px;
+        line-height: 1.08;
+        letter-spacing: -0.5px;
+        max-width: 1100px;
+        margin: 0 auto 20px;
     }
 
     .text {

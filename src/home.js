@@ -6,6 +6,75 @@ document.addEventListener("DOMContentLoaded", () => {
     const solutionContent = document.getElementById("solution-content");
     let currentSolution = null;
 
+    // Try to generate a poster image from the video's frame at 1 second.
+    // If cross-origin or other errors occur, we quietly fall back to the existing `poster` attribute.
+    function generatePosterFromVideo(videoEl, timeSec = 1) {
+        if (!videoEl) return;
+        try {
+            // Avoid repeating work
+            if (videoEl.dataset.posterGenerated) return;
+            videoEl.crossOrigin = 'anonymous';
+
+            const capture = () => {
+                try {
+                    const w = videoEl.videoWidth || videoEl.clientWidth;
+                    const h = videoEl.videoHeight || videoEl.clientHeight;
+                    if (!w || !h) return;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(videoEl, 0, 0, w, h);
+                    const dataURL = canvas.toDataURL('image/png');
+                    if (dataURL) {
+                        videoEl.setAttribute('poster', dataURL);
+                        videoEl.dataset.posterGenerated = '1';
+                    }
+                } catch (err) {
+                    // Canvas may be tainted due to CORS — ignore and keep existing poster
+                    console.warn('generatePosterFromVideo: could not capture frame', err);
+                }
+            };
+
+            const seekAndCapture = () => {
+                const originalTime = videoEl.currentTime || 0;
+                const onSeek = function () {
+                    capture();
+                    videoEl.removeEventListener('seeked', onSeek);
+                    try { videoEl.currentTime = originalTime; } catch (e) { /* ignore */ }
+                };
+                videoEl.addEventListener('seeked', onSeek);
+                try {
+                    videoEl.currentTime = Math.max(0, timeSec);
+                } catch (e) {
+                    // Some browsers restrict setting currentTime before metadata; fallback to loadedmetadata
+                    videoEl.removeEventListener('seeked', onSeek);
+                }
+            };
+
+            if (videoEl.readyState >= 2) {
+                seekAndCapture();
+            } else {
+                const onMeta = function () {
+                    videoEl.removeEventListener('loadedmetadata', onMeta);
+                    seekAndCapture();
+                };
+                videoEl.addEventListener('loadedmetadata', onMeta);
+            }
+            // Safety: if nothing happens, try again after a short delay
+            setTimeout(() => {
+                if (!videoEl.dataset.posterGenerated) {
+                    try { capture(); } catch (_) { }
+                }
+            }, 2500);
+        } catch (err) {
+            console.warn('generatePosterFromVideo error', err);
+        }
+    }
+
+    // Apply to all videos on the page (capture frame at 1s)
+    document.querySelectorAll('video').forEach(v => generatePosterFromVideo(v, 1));
+
     const results = {
         tech: "👉 Công nghệ và mạng xã hội: Khảo sát do nhóm thực hiện trên 362 người cho thấy, có 196 người, tương đương 54,14% số người tham gia cũng đang gặp tình trạng giống bạn; họ rất thường xuyên chịu tác động từ công nghệ và mạng xã hội đến khả năng tập trung trong học tập, công việc và sinh hoạt hằng ngày.",
         social: "👉 Môi trường và tác động xã hội: Khảo sát do nhóm thực hiện trên 362 người cho thấy, có 85 người, tương đương 23,48% số người tham gia cũng đang gặp tình trạng giống bạn; họ rất thường xuyên chịu tác động từ môi trường và tác động xã hội đến khả năng tập trung trong học tập, công việc và sinh hoạt hằng ngày.",
@@ -433,6 +502,8 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 
         solutionContent.innerHTML = solutions[methodFactor];
         solutionContent.classList.add("show");
+
+        solutionContent.querySelectorAll('video').forEach(v => generatePosterFromVideo(v, 1));
 
         const optionSection = document.createElement("div");
         optionSection.className = "method-options";
