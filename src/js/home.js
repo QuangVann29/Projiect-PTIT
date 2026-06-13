@@ -41,8 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
              Việc thay đổi môi trường không chỉ giúp hạn chế các yếu tố gây mất tập trung mà còn tạo điều kiện để duy trì động lực và hình thành thói quen làm việc hiệu quả. 
             Dưới góc nhìn chuyên môn, NCS. Ths Nguyễn Đại Minh - giảng viên Trường Đại học Khoa học Xã hội và Nhân văn chia sẻ:</p>
             
+            <h4 class="tile-void"> LẮNG NGHE LỜI CHIA SẺ CỦA CHUYÊN GIA TÂM LÝ</h4>
+            <h4 class="tile-void"> NCS. ThS NGUYỄN ĐẠI MINH - GIẢNG VIÊN KHOA TÂM LÝ TRƯỜNG</h4>
+            <h4 class="tile-void"> ĐẠI HỌC KHOA HỌC XÃ HỘI VÀ NHÂN VĂN</h4>
           <div class="audio-card" id="audio-trigger">
-
+            <button type="button" class="audio-toggle-btn" aria-label="Toggle audio">▶</button>
             <div class="audio-wave">
                 <span></span><span></span><span></span><span></span><span></span>
                 <span></span><span></span><span></span><span></span><span></span>
@@ -162,14 +165,9 @@ Những giá sách trải dài nên khung cảnh quen thuộc của các thư vi
 
 <div class="meeting-gallery">
 
-    <div class="meeting-top">
-        <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781082227/IMG_8767_1_v53tpj.png" alt="">
-        <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781082305/IMG_8774_1_qwxirj.png" alt="">
-    </div>
-
-    <div class="meeting-bottom">
-        <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781082344/IMG_8761_1_dnuiwg.png" alt="">
-    </div>
+    
+        <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781318549/Coworking_Space_2_1_wwzhen.png" alt="">
+    
 
 </div>
         `,
@@ -239,7 +237,7 @@ Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải
 <p>
 Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước khi tăng thời gian luyện tập. Theo các chuyên gia về thiền và chánh niệm, điều quan trọng không nằm ở việc phải ngồi thiền trong bao lâu, mà là khả năng nhận ra khi tâm trí mất tập trung và đưa sự chú ý quay trở lại hiện tại.
 </p>
-<img class="focus-image"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781151206/image_15_1_n0ckat.png" alt="thiền">
+<img class="focus-image2"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781319177/image_16_fs5tyi.png" alt="thiền">
 <h4>
 </br>
 “Tại sao khi mất tập trung, thiền lại giúp bạn tập trung trở lại?”
@@ -277,7 +275,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 
         skill: `
             <h3>Giải pháp:  THIỀN - TẬP TRUNG TỪ SỰ TĨNH LẶNG</h3>
-             <div class="expert-quote-section">
+            <div class="expert-quote-section">
     <div class="expert-quote-frame">
         <div class="expert-quote-card">
             <span class="quote-mark quote-left">“</span>
@@ -340,9 +338,9 @@ Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải
 <p>
 Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước khi tăng thời gian luyện tập. Theo các chuyên gia về thiền và chánh niệm, điều quan trọng không nằm ở việc phải ngồi thiền trong bao lâu, mà là khả năng nhận ra khi tâm trí mất tập trung và đưa sự chú ý quay trở lại hiện tại.
 </p>
-<img class="focus-image"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781151206/image_15_1_n0ckat.png" alt="thiền">
-</br>
+<img class="focus-image2"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781319177/image_16_fs5tyi.png" alt="thiền">
 <h4>
+</br>
 “Tại sao khi mất tập trung, thiền lại giúp bạn tập trung trở lại?”
 </4>
 <div class="video-meditation">
@@ -476,28 +474,66 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         renderSolution(methodKey);
     });
 
+    // audio toggle button
+    function updateAudioToggleState(card, audio) {
+        const toggle = card.querySelector('.audio-toggle-btn');
+        if (!toggle) return;
+        toggle.textContent = audio.paused ? '▶' : '⏸';
+    }
 
-    // audio card 
-    document.addEventListener("click", function (e) {
+    document.addEventListener('click', function (e) {
+        const toggleBtn = e.target.closest('.audio-toggle-btn');
+        if (toggleBtn) {
+            e.stopPropagation();
+            const card = toggleBtn.closest('.audio-card');
+            const audio = card ? card.querySelector('audio') : null;
+            if (!audio) return;
+            if (audio.paused) {
+                audio.play();
+                card.classList.add('playing');
+            } else {
+                audio.pause();
+                card.classList.remove('playing');
+            }
+            updateAudioToggleState(card, audio);
+            return;
+        }
+
         const card = e.target.closest(".audio-card");
-
         if (!card) return;
 
         const audio = card.querySelector("audio");
-
         if (!audio) return;
 
         if (audio.paused) {
             audio.play();
-            card.classList.add("playing");
         } else {
             audio.pause();
-            card.classList.remove("playing");
         }
+    });
 
-        audio.onended = () => {
-            card.classList.remove("playing");
-        };
+    const audioCards = document.querySelectorAll('.audio-card');
+    audioCards.forEach(card => {
+        const audio = card.querySelector('audio');
+        if (!audio) return;
+
+        const toggle = card.querySelector('.audio-toggle-btn');
+        if (toggle) updateAudioToggleState(card, audio);
+
+        audio.addEventListener('play', () => {
+            card.classList.add('playing');
+            updateAudioToggleState(card, audio);
+        });
+
+        audio.addEventListener('pause', () => {
+            card.classList.remove('playing');
+            updateAudioToggleState(card, audio);
+        });
+
+        audio.addEventListener('ended', () => {
+            card.classList.remove('playing');
+            updateAudioToggleState(card, audio);
+        });
     });
 
 

@@ -124,7 +124,7 @@ body {
 
 .content-img {
     width: 100%;
-    max-width: 760px;
+    max-width: 1000px;
     margin: 24px auto 28px;
     display: block;
     border-radius: 16px;
@@ -508,14 +508,50 @@ body {
     background: #f7f5d6;
     border-radius: 12px;
 
-    text-align: center;
-    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .audio-card:hover {
     transform: translateY(-3px);
+}
+
+.audio-card audio {
+    display: none;
+}
+
+.audio-toggle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+}
+
+.audio-toggle-btn:hover {
+    opacity: 0.9;
+}
+
+.audio-toggle-btn:focus {
+    outline: 2px solid rgba(0,0,0,0.15);
+}
+.tile-void {
+    text-align: center;
+    font-size: 18px;
 }
 
 .audio-wave {
@@ -1245,6 +1281,19 @@ body {
         gap: 40px;
     }
 
+     .focus-image2 {
+        /* width: 100vw; */
+        /* max-width: none; */
+        height: auto;
+
+        margin-top: 50px;
+        /* margin-bottom: 50px; */
+
+        /* margin-left: calc(50% - 50vw); */
+        margin-right: calc(50% - 50vw);
+
+        border-radius: 0;
+    }
      .focus-image {
         width: 100vw;
         max-width: none;
