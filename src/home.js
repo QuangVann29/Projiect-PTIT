@@ -291,15 +291,9 @@ Cách thực hành thiền chánh niệm đơn giản:
 Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải mái, giữ lưng thẳng và thả lỏng cơ thể. Không cần cố gắng kiểm soát suy nghĩ hay ép bản thân phải “trống rỗng”.
 </p>
 <p>
-- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:
-</p>
-<p>
-- Hít vào bằng mũi trong khoảng 4 giây
-</p>
-<p>
-- Giữ nhẹ 1–2 giây
-</p>
-<p>
+- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:<br>
+- Hít vào bằng mũi trong khoảng 4 giây<br>
+- Giữ nhẹ 1–2 giây<br>
 - Thở ra chậm bằng mũi hoặc miệng trong khoảng 4–6 giây
 </p>
 <p>
@@ -392,15 +386,9 @@ Cách thực hành thiền chánh niệm đơn giản:
 Người tập có thể bắt đầu bằng việc ngồi ở tư thế thoải mái, giữ lưng thẳng và thả lỏng cơ thể. Không cần cố gắng kiểm soát suy nghĩ hay ép bản thân phải “trống rỗng”.
 </p>
 <p>
-- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:
-</p>
-<p>
-- Hít vào bằng mũi trong khoảng 4 giây
-</p>
-<p>
-- Giữ nhẹ 1–2 giây
-</p>
-<p>
+- Một nhịp thở cơ bản trong thiền chánh niệm thường được thực hiện theo nhịp:<br>
+- Hít vào bằng mũi trong khoảng 4 giây<br>
+- Giữ nhẹ 1–2 giây<br>
 - Thở ra chậm bằng mũi hoặc miệng trong khoảng 4–6 giây
 </p>
 <p>
