@@ -82,84 +82,66 @@
 
             <h2>NHẬN DIỆN VÀ <br>CẢI THIỆN SỰ TẬP TRUNG</h2>
 
-            <div class="test-wrap">
-                <div class="test-info">
-                    <div class="test-info-inner">
-                        <p>
-                            Bài Test giúp bạn <strong>nhận diện những yếu tố gây mất tập trung và mức độ ảnh
-                                hưởng</strong>
-                            của chúng đến bản thân. Từ đó, bạn có thể xác định nguyên nhân chính và
-                            <strong>tham khảo các giải pháp phù hợp để cải thiện khả năng tập trung.</strong>
-                        </p>
+           <div class="test-wrap">
+    <div class="test-info">
+        <div class="test-info-inner">
+            <p>
+                Bài Test giúp bạn <strong>tự đánh giá mức độ ảnh hưởng của các yếu tố đến khả năng tập trung của bản thân.</strong>
+                Thông qua việc xếp hạng các yếu tố theo cảm nhận cá nhân, bạn có thể nhận diện những yếu tố đang tác động đến sự tập trung của bản thân và
+                <strong>tham khảo các giải pháp phù hợp để cải thiện khả năng tập trung.</strong>
+            </p>
 
-                        <p>
-                            Bài test gồm <strong>5 câu hỏi với 5 mức độ trả lời.</strong><br>
-                            <em>(Mỗi câu chỉ chọn 1 đáp án và mỗi mức độ chỉ được sử dụng một lần trong toàn bộ bài
-                                test.)</em>
-                        </p>
+            <p>
+                <strong>Hãy xếp hạng 5 yếu tố theo mức độ ảnh hưởng đến khả năng tập trung của bạn</strong><br>
+                (1: ảnh hưởng nhiều nhất; 5: không ảnh hưởng).
+            </p>
 
-                        <p class="note-text">
-                            <strong>Lưu ý:</strong> Kết quả và các giải pháp đề xuất chỉ mang tính tham khảo đối với
-                            tình trạng mất tập trung ở mức độ nhẹ, phổ biến; không dùng để đánh giá hay chẩn đoán bất kỳ
-                            vấn đề cá nhân nào.
-                        </p>
-                    </div>
-                </div>
+            <p class="note-text">
+                <strong>Lưu ý:</strong> Bài test không thu thập dữ liệu cá nhân. Kết quả và các gợi ý được đưa ra chỉ mang tính tham khảo, giúp bạn nhận diện những yếu tố có thể ảnh hưởng đến khả năng tập trung của bản thân; không dùng để đánh giá hay chẩn đoán bất kỳ vấn đề cá nhân nào.
+            </p>
+        </div>
+    </div>
 
-                <div class="test-form">
-                    <h3>Điều Gì Đang Làm Bạn Mất Tập Trung?</h3>
+   <div class="test-form">
+    <h3>Điều Gì Đang Làm Bạn Mất Tập Trung?</h3>
 
-                    <div class="survey-grid">
-                        <div></div>
+    <div class="rank-list">
+        <div class="rank-item" data-factor="tech">
+            <div class="rank-dot"></div>
+            <p><strong>Công nghệ và mạng xã hội:</strong> (Thiết bị công nghệ: điện thoại, máy tính...; Mạng xã hội: TikTok, Facebook...)</p>
+            <div class="rank-number" draggable="true">1</div>
+        </div>
 
-                        <div>Rất thường xuyên</div>
-                        <div>Thường xuyên</div>
-                        <div>Thỉnh thoảng</div>
-                        <div>Hiếm khi</div>
-                        <div>Không bao giờ</div>
+        <div class="rank-item" data-factor="social">
+            <div class="rank-dot"></div>
+            <p><strong>Môi trường và tác động xã hội:</strong> (Yếu tố xung quanh: gia đình, bạn bè...; Môi trường học tập/làm việc không phù hợp)</p>
+            <div class="rank-number" draggable="true">2</div>
+        </div>
 
-                        <!-- 1 -->
-                        <div class="question">1. Công nghệ và mạng xã hội</div>
-                        <label><input type="radio" name="q1" value="very" data-factor="tech"></label>
-                        <label><input type="radio" name="q1" value="often" data-factor="tech"></label>
-                        <label><input type="radio" name="q1" value="sometimes" data-factor="tech"></label>
-                        <label><input type="radio" name="q1" value="rarely" data-factor="tech"></label>
-                        <label><input type="radio" name="q1" value="never" data-factor="tech"></label>
+        <div class="rank-item" data-factor="pressure">
+            <div class="rank-dot"></div>
+            <p><strong>Tâm lý và áp lực cuộc sống:</strong> (Tâm trạng: stress, chán nản, thụ động; Áp lực học tập, công việc, cuộc sống)</p>
+            <div class="rank-number" draggable="true">3</div>
+        </div>
 
-                        <!-- 2 -->
-                        <div class="question">2. Môi trường và tác động xã hội</div>
-                        <label><input type="radio" name="q2" value="very" data-factor="social"></label>
-                        <label><input type="radio" name="q2" value="often" data-factor="social"></label>
-                        <label><input type="radio" name="q2" value="sometimes" data-factor="social"></label>
-                        <label><input type="radio" name="q2" value="rarely" data-factor="social"></label>
-                        <label><input type="radio" name="q2" value="never" data-factor="social"></label>
+        <div class="rank-item" data-factor="habit">
+            <div class="rank-dot"></div>
+            <p><strong>Thói quen và lối sống cá nhân:</strong> (Thói quen sinh hoạt không lành mạnh: thức khuya, ăn uống không khoa học, ít vận động...; Thói quen trì hoãn công việc)</p>
+            <div class="rank-number" draggable="true">4</div>
+        </div>
 
-                        <!-- 3 -->
-                        <div class="question">3. Tâm lý và áp lực cuộc sống</div>
-                        <label><input type="radio" name="q3" value="very" data-factor="pressure"></label>
-                        <label><input type="radio" name="q3" value="often" data-factor="pressure"></label>
-                        <label><input type="radio" name="q3" value="sometimes" data-factor="pressure"></label>
-                        <label><input type="radio" name="q3" value="rarely" data-factor="pressure"></label>
-                        <label><input type="radio" name="q3" value="never" data-factor="pressure"></label>
+        <div class="rank-item" data-factor="skill">
+            <div class="rank-dot"></div>
+            <p><strong>Kỹ năng quản lý bản thân:</strong> (Thiếu kỹ năng quản lý thời gian; Thiếu kỹ năng tự quản lý và duy trì tập trung)</p>
+            <div class="rank-number" draggable="true">5</div>
+        </div>
 
-                        <!-- 4 -->
-                        <div class="question">4. Thói quen và lối sống cá nhân</div>
-                        <label><input type="radio" name="q4" value="very" data-factor="habit"></label>
-                        <label><input type="radio" name="q4" value="often" data-factor="habit"></label>
-                        <label><input type="radio" name="q4" value="sometimes" data-factor="habit"></label>
-                        <label><input type="radio" name="q4" value="rarely" data-factor="habit"></label>
-                        <label><input type="radio" name="q4" value="never" data-factor="habit"></label>
-
-                        <!-- 5 -->
-                        <div class="question">5. Kỹ năng quản lý bản thân</div>
-                        <label><input type="radio" name="q5" value="very" data-factor="skill"></label>
-                        <label><input type="radio" name="q5" value="often" data-factor="skill"></label>
-                        <label><input type="radio" name="q5" value="sometimes" data-factor="skill"></label>
-                        <label><input type="radio" name="q5" value="rarely" data-factor="skill"></label>
-                        <label><input type="radio" name="q5" value="never" data-factor="skill"></label>
-                    </div>
-                </div>
-            </div>
+        <p class="rank-note">
+            * Kéo các số từ 1 đến 5 vào từng yếu tố theo mức độ ảnh hưởng đến khả năng tập trung của bạn.
+        </p>
+    </div>
+</div>
+</div>
 
             <div class="survey-action">
                 <button id="reset-survey-btn" class="reset-survey-btn" type="button">
@@ -202,7 +184,7 @@
                 MỨC ĐỘ MẤT TẬP TRUNG MÀ GIỚI TRẺ THƯỜNG GẶP
             </h3>
             <img class="content-img"
-                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1780996762/ChatGPT_Image_Jun_7_2026_11_33_10_PM_1_ej50fa.png"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781840685/ChatGPT_Image_Jun_16_2026_09_39_23_PM_4_uxgfba.png"
                 alt="Biểu đồ">
 
             <p class="text">
@@ -286,7 +268,7 @@
                 tiếp đến hiệu suất làm việc, chất lượng học tập và khả năng hoàn thành mục tiêu.
             </p>
             <img class="focus-image"
-                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781256319/mega_1_ciphwe.png"
+                src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781840861/mega_1_1_e1w5iq.png"
                 alt="sự tập trung">
             <h4 class="sub-title">Hành trình tìm lại sự tập trung</h4>
             <p class="text">

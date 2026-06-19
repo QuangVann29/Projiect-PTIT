@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const radios = document.querySelectorAll(".survey-grid input[type='radio']");
     const resultBox = document.getElementById("survey-result");
     const resultList = document.getElementById("result-list");
     const solutionBtn = document.getElementById("show-solution-btn");
@@ -178,66 +177,34 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
 </div>
-<p>
-Những giá sách trải dài nên khung cảnh quen thuộc của các thư viện. Hàng nghìn đầu sách nằm ngay ngắn trên các kệ, mang theo những câu chuyện, kiến thức và ký ức được lưu giữ qua thời gian. Trong không gian ấy, mỗi người đều có thể chậm lại đôi chút để tìm cho mìn một khoảng yên tĩnh hiếm hoi giữa nhịp sống hối hả bên ngoài.
+<p class="text-column">
+Những giá sách trải dài tạo nên khung cảnh đặc trưng của thư viện. 
 </p>
-<div class="library-photo-grid">
 
-    <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781075978/Rectangle_31_dyyt2n.png" alt="Thư viện">
-
-    <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781076019/Rectangle_30_l1recy.png" alt="Thư viện">
-
-    <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781076050/Rectangle_32_brf33z.png" alt="Thư viện">
-
-    <div class="library-quote">
-        <p>
-            "Tôi luôn hình dung thiên đường
-            sẽ là một dạng thư viện nào đó."
-        </p>
-
-        <span>- Jorge Luis Borges -</span>
-         <h4 class="tile-img2">Nguồn ảnh: D Free Book</h4>
-    </div>
-
-</div>
 
         <h4 class="tile">Co-working Space – Không gian làm việc chuyên nghiệp</h4>
 
         <p>Với những người trẻ cần một nơi để học tập và làm việc nghiêm túc, co-working space là một lựa chọn rất phù hợp. Không gian này tạo cảm giác thoải mái, linh hoạt giống như quán cà phê, nhưng vẫn giữ được sự chuyên nghiệp và ổn định như một văn phòng làm việc.</p>
 
-        <p>Bạn nên chọn co-working space thay vì quán cà phê khi cần tập trung trong nhiều giờ liên tục. Đây là lựa chọn phù hợp nếu bạn phải học bài, làm deadline, xử lý công việc quan trọng hoặc cần một môi trường ít bị gián đoạn bởi tiếng nói chuyện, âm nhạc hay người ra vào liên tục. Coworking space cũng phù hợp khi bạn cần một không gian ổn định hơn quán cà phê. Thay vì phải lo tìm chỗ ngồi, ổ cắm điện, mạng wifi hay không gian đủ yên tĩnh, bạn có thể làm việc trong một môi trường được thiết kế sẵn cho việc học tập và làm việc.</p>
-
+        <p>Bạn nên chọn coworking space thay vì quán cà phê khi cần tập trung trong nhiều giờ liên tục. Đây là lựa chọn phù hợp nếu bạn phải học bài, làm deadline, xử lý công việc quan trọng hoặc cần một môi trường ít bị gián đoạn bởi tiếng nói chuyện, âm nhạc hay người ra vào liên tục. Coworking space cũng phù hợp khi bạn cần một không gian ổn định hơn quán cà phê. Thay vì phải lo tìm chỗ ngồi, ổ cắm điện, mạng wifi hay không gian đủ yên tĩnh, bạn có thể làm việc trong một môi trường được thiết kế sẵn cho việc học tập và làm việc. Ảnh 360° dưới đây sẽ mang đến góc nhìn trực quan về một coworking space điển hình dành cho học tập và làm việc.</p>
+        <div class="momento360-grid">
+            <div class="momento360-item">
+                <iframe
+                    src="https://momento360.com/e/u/372ebb4eefa240c291f2395f8835839e?utm_campaign=embed&amp;utm_source=other&amp;utm_medium=embed&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium&amp;display-plan=true"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+        </div>
+        <p class="text-column">
+Không gian tại Gạch Coworking sapce 
+        </p>
+        
         <p>Nếu bạn thường xuyên phải tham gia họp online, học trực tuyến hoặc gọi điện trao đổi công việc, co-working space sẽ giúp bạn chuyên nghiệp hơn. Không gian yên tĩnh, riêng tư và ít tiếng ồn giúp cuộc gọi rõ ràng hơn, đồng thời hạn chế tối đa các yếu tố gây xao nhãng.
         Những lợi ích nổi bật của co-working space có thể kể đến như: không gian yên tĩnh, wifi ổn định, ghế ngồi công thái học, bàn làm việc phù hợp và môi trường tập trung cao. Nhờ đó, bạn có thể học tập, làm việc trong thời gian dài mà vẫn cảm thấy thoải mái và hiệu quả hơn.</p>
 
 
-<div class="momento360-grid">
-    <div class="momento360-item">
-        <iframe
-            src="https://momento360.com/e/u/cd4c9ab86751477a9e80f27cfb49f564?utm_campaign=embed&amp;utm_source=other&amp;utm_medium=embed&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium&amp;display-plan=true"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <div class="momento360-item">
-        <iframe
-            src="https://momento360.com/e/u/372ebb4eefa240c291f2395f8835839e?utm_campaign=embed&amp;utm_source=other&amp;utm_medium=embed&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium&amp;display-plan=true"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
-    </div>
-    
-</div>
-
-
-<div class="meeting-gallery">
-
-    
-        <img src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781318549/Coworking_Space_2_1_wwzhen.png" alt="">
-    
-
-</div>
         `,
 
         pressure: `
@@ -411,50 +378,81 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         `
     };
 
-    radios.forEach(radio => {
-        radio.addEventListener("change", () => {
-            lockUsedColumns();
-            hideSolution();
-            showResultWhenDone();
-        });
-    });
+    /* ===== DRAG & DROP RANKING TEST ===== */
+    let draggedNumber = null;
 
-    if (resetBtn) {
-        resetBtn.addEventListener("click", () => {
-            radios.forEach(radio => {
-                radio.checked = false;
-                radio.disabled = false;
+    function initDragDropRanking() {
+        const rankNumbers = document.querySelectorAll(".rank-number");
+        const rankDots = document.querySelectorAll(".rank-dot");
+
+        rankNumbers.forEach(number => {
+            number.setAttribute("draggable", "true");
+            number.addEventListener("dragstart", () => {
+                draggedNumber = number;
             });
-            resultBox.style.display = "none";
-            solutionBtn.style.display = "none";
-            resultList.innerHTML = "";
-            hideSolution();
+        });
+
+        rankDots.forEach(dot => {
+            dot.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dot.classList.add("drag-over");
+            });
+
+            dot.addEventListener("dragleave", () => {
+                dot.classList.remove("drag-over");
+            });
+
+            dot.addEventListener("drop", () => {
+                dot.classList.remove("drag-over");
+                if (!draggedNumber) return;
+
+                const oldParent = draggedNumber.parentElement;
+                const currentNumberInDot = dot.querySelector(".rank-number");
+
+                if (currentNumberInDot && currentNumberInDot !== draggedNumber) {
+                    const oldItem = dot.closest(".rank-item");
+                    oldItem.appendChild(currentNumberInDot);
+                }
+
+                if (oldParent && oldParent.classList.contains("rank-dot")) {
+                    oldParent.innerHTML = "";
+                }
+
+                dot.innerHTML = "";
+                dot.appendChild(draggedNumber);
+
+                hideSolution();
+                checkRankingFinished();
+            });
         });
     }
 
-    function showResultWhenDone() {
-        const checkedRadios = [...radios].filter(radio => radio.checked);
+    function checkRankingFinished() {
+        const selectedRanks = document.querySelectorAll(".rank-dot .rank-number");
 
-        if (checkedRadios.length < 5) {
+        if (selectedRanks.length < 5) {
             resultBox.style.display = "none";
             solutionBtn.style.display = "none";
             resultList.innerHTML = "";
-            hideSolution();
             return;
         }
 
-        const veryRadio = checkedRadios.find(radio => radio.value === "very");
+        const ranking = {};
 
-        if (!veryRadio) {
-            resultBox.style.display = "none";
-            solutionBtn.style.display = "none";
-            resultList.innerHTML = "";
-            hideSolution();
-            return;
-        }
+        document.querySelectorAll(".rank-item").forEach(item => {
+            const factor = item.dataset.factor;
+            const numberEl = item.querySelector(".rank-dot .rank-number");
+            if (!factor || !numberEl) return;
+            ranking[factor] = parseInt(numberEl.textContent.trim(), 10);
+        });
 
-        const factor = veryRadio.dataset.factor;
+        const topFactor = Object.entries(ranking)
+            .sort((a, b) => a[1] - b[1])[0][0];
 
+        showRankingResult(topFactor);
+    }
+
+    function showRankingResult(factor) {
         resultList.innerHTML = `
             <p class="result-item">
                 ${results[factor]}
@@ -462,18 +460,31 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         `;
 
         resultBox.style.display = "block";
-        solutionBtn.style.display = "block";
+        solutionBtn.style.display = "inline-flex";
+
+        solutionBtn.onclick = () => {
+            const methodKey = factorToMethod[factor];
+            if (!methodKey) return;
+            renderSolution(methodKey);
+        };
     }
 
-    function lockUsedColumns() {
-        const selectedValues = [...radios]
-            .filter(radio => radio.checked)
-            .map(radio => radio.value);
+    if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+            document.querySelectorAll(".rank-item").forEach(item => {
+                const dot = item.querySelector(".rank-dot");
+                const num = dot ? dot.querySelector(".rank-number") : null;
+                if (num) item.appendChild(num);
+                if (dot) dot.innerHTML = "";
+            });
 
-        radios.forEach(radio => {
-            radio.disabled = !radio.checked && selectedValues.includes(radio.value);
+            resultBox.style.display = "none";
+            solutionBtn.style.display = "none";
+            resultList.innerHTML = "";
+            hideSolution();
         });
     }
+
 
     function hideSolution() {
         if (!solutionContent) return;
@@ -532,18 +543,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         });
     }
 
-    solutionBtn.addEventListener("click", () => {
-        const veryRadio = [...radios].find(
-            radio => radio.checked && radio.value === "very"
-        );
-
-        if (!veryRadio) return;
-
-        const methodKey = factorToMethod[veryRadio.dataset.factor];
-        if (!methodKey) return;
-
-        renderSolution(methodKey);
-    });
+    initDragDropRanking();
 
     // audio toggle button
     function updateAudioToggleState(card, audio) {
