@@ -136,22 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
         <source src="https://res.cloudinary.com/dkmudlfal/video/upload/voice_ko_gian_rljsui.wav" type="audio/wav">
     </audio>
 </div>
-
-
-
 </div>
-
-                    
-
             <div id="audio-subtitle" class="audio-subtitle"></div>
                     <p>Mất tập trung đang trở thành vấn đề mà nhiều người trẻ phải đối mặt trong học tập và công việc. Khảo sát trên 362 người của nhóm thực hiện cho thấy 72, 37% người tham gia cho biết họ thường xuyên hoặc rất thường xuyên bị tác động bởi các yếu tố môi trường và xã hội. 
-
+            <p>
             Từ kết quả khảo sát và quá trình tìm hiểu thực tế, nhóm thực hiện nhận thấy việc thay đổi không gian học tập, làm việc có thể là một giải pháp giúp cải thiện tình trạng này. Thay vì học tập hoặc làm việc trong những môi trường quen thuộc dễ gây xao nhãng, người trẻ có thể tìm đến những không gian được thiết kế phù hợp hơn cho việc tập trung.
-
-            Trong số đó, quán cà phê học tập là một lựa chọn đáng cân nhắc. Không gian tương đối yên tĩnh, hệ thống bàn ghế được bố trí phục vụ cho việc học tập, cùng bầu không khí mà phần lớn mọi người đều đang tập trung vào công việc của mình có thể tạo động lực và giúp người trẻ duy trì sự chú ý tốt hơn. Bên cạnh đó, việc thay đổi môi trường cũng góp phần giảm cảm giác nhàm chán, tạo ra nguồn cảm hứng mới trong quá trình học tập và làm việc.
-
-            Để đánh giá rõ hơn hiệu quả của giải pháp này, nhóm thực hiện đã trải nghiệm thực tế tại một quán cà phê học tập và ghi nhận những chia sẻ từ các bạn trẻ đang lựa chọn nơi đây làm không gian học tập, làm việc. 
-            <p/>
+            </p>
+            <p>
+Trong số đó, quán cà phê học tập là một lựa chọn đáng cân nhắc. Không gian tương đối yên tĩnh, hệ thống bàn ghế được bố trí phục vụ cho việc học tập, cùng bầu không khí mà phần lớn mọi người đều đang tập trung vào công việc của mình có thể tạo động lực và giúp người trẻ duy trì sự chú ý tốt hơn. Bên cạnh đó, việc thay đổi môi trường cũng góp phần giảm cảm giác nhàm chán, tạo ra nguồn cảm hứng mới trong quá trình học tập và làm việc.
+            </p>
+            <p>
+                Để đánh giá rõ hơn hiệu quả của giải pháp này, nhóm thực hiện đã trải nghiệm thực tế tại một quán cà phê học tập và ghi nhận những chia sẻ từ các bạn trẻ đang lựa chọn nơi đây làm không gian học tập, làm việc.
+            </p>
             <div class="video-cafe">
             <video controls poster="../assets/image/video-cover.png">
                                 <source src="https://res.cloudinary.com/dkmudlfal/video/upload/v1781259366/0609_1_1_1_1_a5os3t.mp4" type="video/mp4">
