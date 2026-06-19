@@ -304,7 +304,6 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             </p>
             <blockquote>
                 “Tôi khuyến nghị các bạn có thể thử áp dụng những việc chúng ta thay đổi về mặt môi trường sinh hoạt,... tận dụng các phương pháp như chia ra 80-20; và đặc biệt là phương pháp Pomodoro”
-                <br><strong>(NCS. ThS Nguyễn Đại Minh)</strong>
             </blockquote>
             <img
         src="https://res.cloudinary.com/dkmudlfal/image/upload/f_auto,q_auto/cà_chua_2_jpeqap"
