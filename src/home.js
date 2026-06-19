@@ -87,12 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
         tech: `
             <h3>Giải pháp: POMODORO - CHIA NHỎ ĐỂ HIỆU QUẢ</h3>
             <p>
-                Xây dựng các chiến lược học tập khoa học được xem là một trong những giải pháp giúp cải thiện khả năng tập trung.
-                Trong đó, phương pháp Pomodoro được đánh giá cao nhờ khả năng giúp người học duy trì sự chú ý trong từng khoảng thời gian ngắn.
-                Chia sẻ về vấn đề này, NCS. ThS Nguyễn Đại Minh cho biết: 
+                Xây dựng các chiến lược học tập khoa học được xem là một trong những giải pháp giúp cải thiện khả năng tập trung. Trong đó, phương pháp Pomodoro được đánh giá cao nhờ khả năng giúp người học duy trì sự chú ý trong từng khoảng thời gian ngắn. Chia sẻ về vấn đề này, NCS. Ths Nguyễn Đại Minh - giảng viên Trường Đại học Khoa học Xã hội và Nhân văn cho biết: 
             </p>
             <blockquote>
-                “Tôi khuyến nghị các bạn có thể thử áp dụng những việc chúng ta thay đổi về mặt môi trường sinh hoạt,... tận dụng các phương pháp như chia ra 80-20; và đặc biệt là phương pháp Pomodoro”
+                “Tôi khuyến nghị các bạn có thể thử áp dụng những việc chúng ta thay đổi về mặt môi trường sinh hoạt,... tận dụng các phương pháp như chia ra 80-20; và đặc biệt là phương pháp Pomodoro”. 
                 <br><strong>(NCS. ThS Nguyễn Đại Minh)</strong>
             </blockquote>
             <img
@@ -109,23 +107,40 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Giữa vô số tác nhân gây xao nhãng, nhiều người trẻ đang chủ động tìm kiếm những không gian phù hợp hơn để học tập và làm việc.
              Việc thay đổi môi trường không chỉ giúp hạn chế các yếu tố gây mất tập trung mà còn tạo điều kiện để duy trì động lực và hình thành thói quen làm việc hiệu quả. 
             Dưới góc nhìn chuyên môn, NCS. Ths Nguyễn Đại Minh - giảng viên Trường Đại học Khoa học Xã hội và Nhân văn chia sẻ:</p>
-            
-            <h4 class="tile-void"> LẮNG NGHE LỜI CHIA SẺ CỦA CHUYÊN GIA TÂM LÝ</h4>
-            <h4 class="tile-void"> NCS. ThS NGUYỄN ĐẠI MINH - GIẢNG VIÊN KHOA TÂM LÝ TRƯỜNG</h4>
-            <h4 class="tile-void"> ĐẠI HỌC KHOA HỌC XÃ HỘI VÀ NHÂN VĂN</h4>
-          <div class="audio-card" id="audio-trigger">
-            <button type="button" class="audio-toggle-btn" aria-label="Toggle audio">▶</button>
-            <div class="audio-wave">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
+        <div class="audio-poster" id="audio-trigger">
+    <img
+        src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781854741/725598475_1628111529320189_4800167062206128149_n_egwc1a.png"
+        alt="Audio poster">
+
+    <div class="audio-overlay">
+        <div class="audio-control">
+
+            <button type="button" class="play-icon" aria-label="Play audio">
+                ▶
+            </button>
+
+            <div class="audio-equalizer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
+        </div>
+    </div>
 
-            <audio id="expertAudio">
-                <source src="https://res.cloudinary.com/dkmudlfal/video/upload/voice_ko_gian_rljsui.wav" type="audio/wav">
-            </audio>
+    <audio id="expertAudio">
+        <source src="https://res.cloudinary.com/dkmudlfal/video/upload/voice_ko_gian_rljsui.wav" type="audio/wav">
+    </audio>
+</div>
 
-                    </div>
+
+
+</div>
+
                     
 
             <div id="audio-subtitle" class="audio-subtitle"></div>
@@ -273,7 +288,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 </4>
 <div class="video-meditation">
     <iframe
-        src="https://player.cloudinary.com/embed/?cloud_name=dkmudlfal&public_id=vid_thiền_khóa_luận_1_idlxjx"
+        src="https://res.cloudinary.com/dkmudlfal/video/upload/v1781850920/M%E1%BB%9AI_Thi%E1%BB%81n_m%E1%BB%9Bi_kh_cap_1_deminw.mp4"
         width="100%"
         height="500"
         frameborder="0"
@@ -468,6 +483,45 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             renderSolution(methodKey);
         };
     }
+    let selectedRankNumber = null;
+
+    document.querySelectorAll(".rank-number").forEach(number => {
+        number.addEventListener("click", () => {
+            document.querySelectorAll(".rank-number").forEach(n => {
+                n.classList.remove("selected-rank");
+            });
+
+            selectedRankNumber = number;
+            number.classList.add("selected-rank");
+        });
+    });
+
+    document.querySelectorAll(".rank-dot").forEach(dot => {
+        dot.addEventListener("click", () => {
+            if (!selectedRankNumber) return;
+
+            const oldParent = selectedRankNumber.parentElement;
+            const currentNumber = dot.querySelector(".rank-number");
+
+            if (currentNumber && currentNumber !== selectedRankNumber) {
+                dot.closest(".rank-item").appendChild(currentNumber);
+            }
+
+            if (oldParent && oldParent.classList.contains("rank-dot")) {
+                oldParent.innerHTML = "";
+            }
+
+            dot.innerHTML = "";
+            dot.appendChild(selectedRankNumber);
+
+            selectedRankNumber.classList.remove("selected-rank");
+            selectedRankNumber = null;
+
+            hideSolution();
+            checkRankingFinished();
+        });
+    });
+    // 
 
     if (resetBtn) {
         resetBtn.addEventListener("click", () => {
@@ -545,68 +599,80 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 
     initDragDropRanking();
 
-    // audio toggle button
-    function updateAudioToggleState(card, audio) {
-        const toggle = card.querySelector('.audio-toggle-btn');
-        if (!toggle) return;
-        toggle.textContent = audio.paused ? '▶' : '⏸';
-    }
+   /* =========================
+   AUDIO POSTER
+========================= */
 
-    document.addEventListener('click', function (e) {
-        const toggleBtn = e.target.closest('.audio-toggle-btn');
-        if (toggleBtn) {
-            e.stopPropagation();
-            const card = toggleBtn.closest('.audio-card');
-            const audio = card ? card.querySelector('audio') : null;
-            if (!audio) return;
-            if (audio.paused) {
-                audio.play();
-                card.classList.add('playing');
-            } else {
-                audio.pause();
-                card.classList.remove('playing');
-            }
-            updateAudioToggleState(card, audio);
-            return;
-        }
+function initAudioPoster() {
+    const audioPoster = document.getElementById("audio-trigger");
+    const expertAudio = document.getElementById("expertAudio");
+    const playIcon = document.querySelector(".play-icon");
 
-        const card = e.target.closest(".audio-card");
-        if (!card) return;
+    if (!audioPoster || !expertAudio || !playIcon) return;
 
-        const audio = card.querySelector("audio");
-        if (!audio) return;
+    audioPoster.addEventListener("click", () => {
+        if (expertAudio.paused) {
+            expertAudio.play();
 
-        if (audio.paused) {
-            audio.play();
+            audioPoster.classList.add("playing");
+            playIcon.textContent = "❚❚";
         } else {
-            audio.pause();
+            expertAudio.pause();
+
+            audioPoster.classList.remove("playing");
+            playIcon.textContent = "▶";
         }
     });
 
-    const audioCards = document.querySelectorAll('.audio-card');
-    audioCards.forEach(card => {
-        const audio = card.querySelector('audio');
-        if (!audio) return;
-
-        const toggle = card.querySelector('.audio-toggle-btn');
-        if (toggle) updateAudioToggleState(card, audio);
-
-        audio.addEventListener('play', () => {
-            card.classList.add('playing');
-            updateAudioToggleState(card, audio);
-        });
-
-        audio.addEventListener('pause', () => {
-            card.classList.remove('playing');
-            updateAudioToggleState(card, audio);
-        });
-
-        audio.addEventListener('ended', () => {
-            card.classList.remove('playing');
-            updateAudioToggleState(card, audio);
-        });
+    expertAudio.addEventListener("play", () => {
+        audioPoster.classList.add("playing");
+        playIcon.textContent = "❚❚";
     });
 
+    expertAudio.addEventListener("pause", () => {
+        audioPoster.classList.remove("playing");
+        playIcon.textContent = "▶";
+    });
+
+    expertAudio.addEventListener("ended", () => {
+        audioPoster.classList.remove("playing");
+        playIcon.textContent = "▶";
+    });
+}
+document.addEventListener("click", function (e) {
+    const poster = e.target.closest(".audio-poster");
+    if (!poster) return;
+
+    const audio = poster.querySelector("audio");
+    const icon = poster.querySelector(".play-icon");
+
+    if (!audio || !icon) return;
+
+    if (audio.paused) {
+        audio.play().then(() => {
+            poster.classList.add("playing");
+            icon.textContent = "❚❚";
+        }).catch(err => {
+            console.log("Audio play error:", err);
+        });
+    } else {
+        audio.pause();
+        poster.classList.remove("playing");
+        icon.textContent = "▶";
+    }
+});
+
+document.addEventListener("ended", function (e) {
+    if (e.target.tagName !== "AUDIO") return;
+
+    const poster = e.target.closest(".audio-poster");
+    if (!poster) return;
+
+    const icon = poster.querySelector(".play-icon");
+
+    poster.classList.remove("playing");
+    if (icon) icon.textContent = "▶";
+}, true);
 
 
 
