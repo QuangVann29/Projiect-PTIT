@@ -252,7 +252,7 @@ body {
 }
 
 .survey-action {
-    max-width: 1280px;
+    max-width: 1170px;
     /* bằng survey-result */
     margin: 12px auto 0;
     display: flex;
@@ -1463,6 +1463,39 @@ body {
     .audio-equalizer span{
         width:4px;
     }
+    /* ===== MOBILE SMOOTH DRAG SUPPORT ===== */
+.rank-number {
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+}
+
+.rank-number:active {
+    cursor: grabbing;
+}
+
+.rank-dragging {
+    transform: scale(1.08);
+    opacity: .95;
+    box-shadow: 0 8px 20px rgba(0,0,0,.22) !important;
+}
+
+.rank-number-placeholder {
+    border-radius: 50%;
+    opacity: 0;
+    flex-shrink: 0;
+}
+
+.rank-dot.drag-over {
+    outline: 2px dashed #143A2A;
+    outline-offset: 4px;
+    transform: scale(1.06);
+}
+
+.rank-dot {
+    transition: transform .15s ease, outline .15s ease;
+}
 
 }
 
@@ -1860,4 +1893,561 @@ body {
     color: #34483c;
     margin: 12px 0 0;
 }
+}
+
+
+/* =========================
+   RANK TEST - FIX DESIGN
+========================= */
+
+.rank-item {
+    display: grid !important;
+    grid-template-columns: 60px 1fr 60px !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.rank-dot {
+    grid-column: 1 !important;
+    width: 45px !important;
+    height: 45px !important;
+    background: #fbf7f7 !important;
+    border-radius: 50% !important;
+    margin: auto !important;
+}
+
+.rank-item p {
+    grid-column: 2 !important;
+}
+
+.rank-number {
+    grid-column: 3 !important;
+    width: 45px !important;
+    height: 45px !important;
+}
+
+@media (max-width:767px){
+    .rank-item{
+        grid-template-columns:38px 1fr 36px !important;
+    }
+    .rank-dot{
+        width:32px !important;
+        height:32px !important;
+    }
+    .rank-number{
+        width:32px !important;
+        height:32px !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL FIX - RANK TEST giống thiết kế mẫu
+   Bố cục: số bên trái -> ô trắng -> nội dung
+   ========================================================= */
+
+.test-wrap {
+    max-width: 1180px !important;
+    margin: 50px auto !important;
+    display: grid !important;
+    grid-template-columns: 410px 1fr !important;
+    align-items: center !important;
+}
+
+.test-form {
+    min-height: auto !important;
+    background: #dcebd4 !important;
+    border-radius: 14px !important;
+    padding: 18px 42px 18px !important;
+    margin-left: -25px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    overflow: visible !important;
+}
+
+.test-form h3 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    color: #0f2f22 !important;
+    margin-bottom: 16px !important;
+}
+
+/* Ẩn survey-grid cũ */
+.survey-grid {
+    display: none !important;
+}
+
+.rank-list {
+    width: 100% !important;
+}
+
+/* Quan trọng: số nằm bên trái, ô trắng ở giữa, chữ bên phải */
+.rank-item {
+    display: grid !important;
+    grid-template-columns: 48px 62px 1fr !important;
+    align-items: center !important;
+    column-gap: 14px !important;
+    margin-bottom: 18px !important;
+}
+
+.rank-number {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 40px !important;
+    height: 40px !important;
+
+    border: 2px solid #34483c !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    color: #111 !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .22) !important;
+    margin: auto !important;
+    cursor: grab !important;
+    user-select: none !important;
+}
+
+.rank-dot {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    background: #fbf7f7 !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: auto !important;
+}
+
+/* Khi kéo số vào ô trắng */
+.rank-dot .rank-number {
+    grid-column: auto !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.rank-item p {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+
+    margin: 0 !important;
+    text-align: left !important;
+
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+    color: #111 !important;
+}
+
+.rank-item p strong {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+}
+
+.rank-note {
+    margin-top: 12px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-style: italic !important;
+    text-decoration: underline !important;
+    color: #ff3b3b !important;
+}
+
+.rank-guide {
+    display: none !important;
+}
+
+/* Nút chọn lại căn phải giống bố cục */
+.survey-action {
+    max-width: 1180px !important;
+    margin: 12px auto 0 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .test-wrap {
+        display: block !important;
+        max-width: 720px !important;
+        margin: 40px auto !important;
+    }
+
+    .test-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 26px 28px 22px !important;
+        border-radius: 18px !important;
+    }
+
+    .rank-item {
+        grid-template-columns: 46px 54px 1fr !important;
+        column-gap: 12px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .rank-number {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .rank-dot {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .rank-item p {
+        font-size: 13px !important;
+    }
+
+    .rank-item p strong {
+        font-size: 14px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+    .test-wrap {
+        display: block !important;
+        width: 100% !important;
+        margin: 30px auto !important;
+    }
+
+    .test-form {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 22px 14px 18px !important;
+        border-radius: 14px !important;
+        overflow: visible !important;
+    }
+
+    .test-form h3 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .rank-item {
+        grid-template-columns: 36px 42px 1fr !important;
+        column-gap: 8px !important;
+        align-items: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .rank-number {
+        width: 31px !important;
+        height: 31px !important;
+        font-size: 12px !important;
+        border-width: 1.5px !important;
+    }
+
+    .rank-dot {
+        width: 34px !important;
+        height: 34px !important;
+        margin-top: 0 !important;
+    }
+
+    .rank-dot .rank-number {
+        width: 31px !important;
+        height: 31px !important;
+    }
+
+    .rank-item p {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+    }
+
+    .rank-item p strong {
+        font-size: 13px !important;
+    }
+
+    .rank-note {
+        margin-top: 12px !important;
+        margin-bottom: 8px !important;
+        font-size: 10px !important;
+        line-height: 1.45 !important;
+    }
+
+    .rank-guide {
+        display: block !important;
+        text-align: center !important;
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+        font-style: italic !important;
+        color: #34483c !important;
+        margin: 8px 0 0 !important;
+    }
+
+    .survey-action {
+        width: 100% !important;
+        padding: 0 14px !important;
+        justify-content: center !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL MOBILE FIX - RANK TEST + DRAG MƯỢT
+   Dán cuối file CSS hoặc dùng file này thay home.css
+   ========================================================= */
+
+/* Drag mượt cho cả desktop/mobile */
+.rank-number {
+    touch-action: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    cursor: grab !important;
+}
+
+.rank-number:active {
+    cursor: grabbing !important;
+}
+
+.rank-dragging {
+    transform: scale(1.08) !important;
+    opacity: .96 !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.25) !important;
+}
+
+.rank-number-placeholder {
+    border-radius: 50% !important;
+    opacity: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.rank-dot {
+    transition: transform .15s ease, outline .15s ease, background .15s ease !important;
+}
+
+.rank-dot.drag-over {
+    outline: 2px dashed #143A2A !important;
+    outline-offset: 4px !important;
+    transform: scale(1.08) !important;
+    background: #ffffff !important;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .home {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .section {
+        padding: 30px 12px !important;
+    }
+
+    .section h2 {
+        font-size: 25px !important;
+        line-height: 1.15 !important;
+    }
+
+    .section-number {
+        font-size: 58px !important;
+    }
+
+    .test-wrap {
+        display: block !important;
+        width: 100% !important;
+        margin: 26px auto 0 !important;
+    }
+
+    .test-info {
+        width: 100% !important;
+        min-height: auto !important;
+        border-radius: 24px !important;
+        padding: 24px 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .test-info p {
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .test-form {
+        width: 100% !important;
+        min-height: auto !important;
+        margin-left: 0 !important;
+        padding: 20px 12px 16px !important;
+        border-radius: 14px !important;
+        overflow: visible !important;
+    }
+
+    .test-form h3 {
+        font-size: 19px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 16px !important;
+    }
+
+    .rank-list {
+        width: 100% !important;
+    }
+
+    /* Mobile: số bên trái -> ô trắng -> nội dung */
+    .rank-item {
+        display: grid !important;
+        grid-template-columns: 34px 38px 1fr !important;
+        column-gap: 8px !important;
+        align-items: center !important;
+        margin-bottom: 14px !important;
+    }
+
+    .rank-number {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        border: 1.5px solid #34483c !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        color: #111 !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        margin: auto !important;
+        box-shadow: 1px 2px 4px rgba(0,0,0,.2) !important;
+    }
+
+    .rank-dot {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        background: #fbf7f7 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: auto !important;
+    }
+
+    .rank-dot .rank-number {
+        grid-column: auto !important;
+        width: 29px !important;
+        height: 29px !important;
+        min-width: 29px !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    .rank-item p {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+        text-align: left !important;
+        font-size: 11.5px !important;
+        line-height: 1.35 !important;
+        color: #111 !important;
+    }
+
+    .rank-item p strong {
+        font-size: 12.5px !important;
+        font-weight: 800 !important;
+    }
+
+    .rank-note {
+        margin-top: 12px !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+        font-size: 9.5px !important;
+        line-height: 1.45 !important;
+        font-style: italic !important;
+        text-decoration: underline !important;
+        color: #ff3b3b !important;
+    }
+
+    .rank-guide {
+        display: block !important;
+        text-align: center !important;
+        font-size: 10.5px !important;
+        line-height: 1.45 !important;
+        font-style: italic !important;
+        color: #34483c !important;
+        margin: 6px 0 0 !important;
+    }
+
+    .survey-action {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 14px auto 0 !important;
+        padding: 0 12px !important;
+        justify-content: center !important;
+    }
+
+    .reset-survey-btn {
+        padding: 10px 24px !important;
+        font-size: 13px !important;
+    }
+
+    .survey-result {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-bottom: 40px !important;
+        margin-top: 22px !important;
+    }
+
+    .result-item {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+        padding: 14px 16px !important;
+    }
+
+    .solution-btn {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        margin: 20px auto 0 !important;
+        font-size: 16px !important;
+        padding: 14px 16px !important;
+        justify-content: center !important;
+    }
+    .author {
+        width: 100%;
+        margin: 40px auto 0;
+        text-align: center;
+    }
+
+    .author h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .author p {
+        font-size: 15px;
+        margin: 6px 0;
+        line-height: 1.5;
+    }
 }

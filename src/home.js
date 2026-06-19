@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const resultBox = document.getElementById("survey-result");
     const resultList = document.getElementById("result-list");
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </p>
             <blockquote>
                 “Tôi khuyến nghị các bạn có thể thử áp dụng những việc chúng ta thay đổi về mặt môi trường sinh hoạt,... tận dụng các phương pháp như chia ra 80-20; và đặc biệt là phương pháp Pomodoro”. 
-                <br><strong>(NCS. ThS Nguyễn Đại Minh)</strong>
+               
             </blockquote>
             <img
         src="https://res.cloudinary.com/dkmudlfal/image/upload/f_auto,q_auto/cà_chua_2_jpeqap"
@@ -388,53 +389,188 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         `
     };
 
-    /* ===== DRAG & DROP RANKING TEST ===== */
+    /* ===== SMOOTH DESKTOP + MOBILE DRAG & DROP RANKING TEST ===== */
+
     let draggedNumber = null;
+    let dragPlaceholder = null;
+    let originParent = null;
+    let originNextSibling = null;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let activePointerId = null;
+
+    function moveNumberToDot(number, dot) {
+        if (!number || !dot) return;
+
+        const currentNumberInDot = dot.querySelector(".rank-number");
+
+        if (currentNumberInDot && currentNumberInDot !== number) {
+            const oldItem = dot.closest(".rank-item");
+            oldItem.appendChild(currentNumberInDot);
+        }
+
+        const oldParent = number.parentElement;
+
+        if (oldParent && oldParent.classList.contains("rank-dot")) {
+            oldParent.innerHTML = "";
+        }
+
+        dot.innerHTML = "";
+        dot.appendChild(number);
+
+        number.classList.remove("selected-rank");
+        hideSolution();
+        checkRankingFinished();
+    }
 
     function initDragDropRanking() {
         const rankNumbers = document.querySelectorAll(".rank-number");
         const rankDots = document.querySelectorAll(".rank-dot");
 
         rankNumbers.forEach(number => {
-            number.setAttribute("draggable", "true");
-            number.addEventListener("dragstart", () => {
-                draggedNumber = number;
-            });
+            number.removeAttribute("draggable");
+            number.style.touchAction = "none";
+
+            number.addEventListener("pointerdown", startPointerDrag);
         });
 
         rankDots.forEach(dot => {
-            dot.addEventListener("dragover", (e) => {
-                e.preventDefault();
-                dot.classList.add("drag-over");
+            dot.addEventListener("pointerenter", () => {
+                if (draggedNumber) dot.classList.add("drag-over");
             });
 
-            dot.addEventListener("dragleave", () => {
+            dot.addEventListener("pointerleave", () => {
                 dot.classList.remove("drag-over");
-            });
-
-            dot.addEventListener("drop", () => {
-                dot.classList.remove("drag-over");
-                if (!draggedNumber) return;
-
-                const oldParent = draggedNumber.parentElement;
-                const currentNumberInDot = dot.querySelector(".rank-number");
-
-                if (currentNumberInDot && currentNumberInDot !== draggedNumber) {
-                    const oldItem = dot.closest(".rank-item");
-                    oldItem.appendChild(currentNumberInDot);
-                }
-
-                if (oldParent && oldParent.classList.contains("rank-dot")) {
-                    oldParent.innerHTML = "";
-                }
-
-                dot.innerHTML = "";
-                dot.appendChild(draggedNumber);
-
-                hideSolution();
-                checkRankingFinished();
             });
         });
+    }
+
+    function startPointerDrag(e) {
+        if (e.button !== undefined && e.button !== 0) return;
+
+        draggedNumber = e.currentTarget;
+        activePointerId = e.pointerId;
+
+        const rect = draggedNumber.getBoundingClientRect();
+
+        dragOffsetX = e.clientX - rect.left;
+        dragOffsetY = e.clientY - rect.top;
+
+        originParent = draggedNumber.parentElement;
+        originNextSibling = draggedNumber.nextSibling;
+
+        dragPlaceholder = document.createElement("div");
+        dragPlaceholder.className = "rank-number-placeholder";
+        dragPlaceholder.style.width = rect.width + "px";
+        dragPlaceholder.style.height = rect.height + "px";
+
+        originParent.insertBefore(dragPlaceholder, draggedNumber.nextSibling);
+
+        draggedNumber.classList.add("rank-dragging");
+        draggedNumber.style.position = "fixed";
+        draggedNumber.style.left = rect.left + "px";
+        draggedNumber.style.top = rect.top + "px";
+        draggedNumber.style.width = rect.width + "px";
+        draggedNumber.style.height = rect.height + "px";
+        draggedNumber.style.zIndex = "9999";
+        draggedNumber.style.pointerEvents = "none";
+        draggedNumber.style.margin = "0";
+
+        document.body.appendChild(draggedNumber);
+
+        window.addEventListener("pointermove", movePointerDrag, { passive: false });
+        window.addEventListener("pointerup", endPointerDrag, { passive: false });
+        window.addEventListener("pointercancel", cancelPointerDrag, { passive: false });
+
+        e.preventDefault();
+    }
+
+    function movePointerDrag(e) {
+        if (!draggedNumber || e.pointerId !== activePointerId) return;
+
+        draggedNumber.style.left = (e.clientX - dragOffsetX) + "px";
+        draggedNumber.style.top = (e.clientY - dragOffsetY) + "px";
+
+        document.querySelectorAll(".rank-dot.drag-over").forEach(dot => {
+            dot.classList.remove("drag-over");
+        });
+
+        const target = document.elementFromPoint(e.clientX, e.clientY);
+        const dot = target ? target.closest(".rank-dot") : null;
+
+        if (dot) dot.classList.add("drag-over");
+
+        e.preventDefault();
+    }
+
+    function endPointerDrag(e) {
+        if (!draggedNumber || e.pointerId !== activePointerId) return;
+
+        const target = document.elementFromPoint(e.clientX, e.clientY);
+        const dot = target ? target.closest(".rank-dot") : null;
+
+        document.querySelectorAll(".rank-dot.drag-over").forEach(item => {
+            item.classList.remove("drag-over");
+        });
+
+        resetDraggedStyle();
+
+        if (dot) {
+            moveNumberToDot(draggedNumber, dot);
+        } else {
+            restoreDraggedNumber();
+        }
+
+        cleanupPointerDrag();
+        e.preventDefault();
+    }
+
+    function cancelPointerDrag(e) {
+        if (!draggedNumber || e.pointerId !== activePointerId) return;
+
+        resetDraggedStyle();
+        restoreDraggedNumber();
+        cleanupPointerDrag();
+    }
+
+    function restoreDraggedNumber() {
+        if (!draggedNumber || !originParent) return;
+
+        if (originNextSibling && originNextSibling.parentElement === originParent) {
+            originParent.insertBefore(draggedNumber, originNextSibling);
+        } else {
+            originParent.appendChild(draggedNumber);
+        }
+    }
+
+    function resetDraggedStyle() {
+        if (!draggedNumber) return;
+
+        draggedNumber.classList.remove("rank-dragging");
+        draggedNumber.style.position = "";
+        draggedNumber.style.left = "";
+        draggedNumber.style.top = "";
+        draggedNumber.style.width = "";
+        draggedNumber.style.height = "";
+        draggedNumber.style.zIndex = "";
+        draggedNumber.style.pointerEvents = "";
+        draggedNumber.style.margin = "";
+    }
+
+    function cleanupPointerDrag() {
+        if (dragPlaceholder) {
+            dragPlaceholder.remove();
+            dragPlaceholder = null;
+        }
+
+        window.removeEventListener("pointermove", movePointerDrag);
+        window.removeEventListener("pointerup", endPointerDrag);
+        window.removeEventListener("pointercancel", cancelPointerDrag);
+
+        draggedNumber = null;
+        originParent = null;
+        originNextSibling = null;
+        activePointerId = null;
     }
 
     function checkRankingFinished() {
@@ -478,10 +614,13 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             renderSolution(methodKey);
         };
     }
+
     let selectedRankNumber = null;
 
     document.querySelectorAll(".rank-number").forEach(number => {
         number.addEventListener("click", () => {
+            if (draggedNumber) return;
+
             document.querySelectorAll(".rank-number").forEach(n => {
                 n.classList.remove("selected-rank");
             });
@@ -493,30 +632,12 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 
     document.querySelectorAll(".rank-dot").forEach(dot => {
         dot.addEventListener("click", () => {
-            if (!selectedRankNumber) return;
+            if (!selectedRankNumber || draggedNumber) return;
 
-            const oldParent = selectedRankNumber.parentElement;
-            const currentNumber = dot.querySelector(".rank-number");
-
-            if (currentNumber && currentNumber !== selectedRankNumber) {
-                dot.closest(".rank-item").appendChild(currentNumber);
-            }
-
-            if (oldParent && oldParent.classList.contains("rank-dot")) {
-                oldParent.innerHTML = "";
-            }
-
-            dot.innerHTML = "";
-            dot.appendChild(selectedRankNumber);
-
-            selectedRankNumber.classList.remove("selected-rank");
+            moveNumberToDot(selectedRankNumber, dot);
             selectedRankNumber = null;
-
-            hideSolution();
-            checkRankingFinished();
         });
     });
-    // 
 
     if (resetBtn) {
         resetBtn.addEventListener("click", () => {
@@ -527,12 +648,18 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
                 if (dot) dot.innerHTML = "";
             });
 
+            document.querySelectorAll(".rank-number").forEach(num => {
+                num.classList.remove("selected-rank");
+            });
+
+            selectedRankNumber = null;
             resultBox.style.display = "none";
             solutionBtn.style.display = "none";
             resultList.innerHTML = "";
             hideSolution();
         });
     }
+
 
 
     function hideSolution() {
