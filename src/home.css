@@ -43,7 +43,7 @@ body {
 .intro-container p {
     font-size: 18px;
     line-height: 1.9;
-    font-style: italic;
+    /* font-style: italic; c */
     font-weight: 400;
     color: #2f352f;
     text-align: left;
