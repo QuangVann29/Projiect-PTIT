@@ -2450,4 +2450,100 @@ body {
         margin: 6px 0;
         line-height: 1.5;
     }
+      .library-column {
+        display: block !important;
+        padding-top: 20px !important;
+        margin: 24px 0 !important;
+    }
+
+    .left-column {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+
+    .left-column img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        border-radius: 16px !important;
+    }
+
+    .right-column {
+        margin-top: 14px !important;
+    }
+
+    .right-column img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        border-radius: 16px !important;
+    }
+
+    .text-column {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+        text-align: left !important;
+        margin-top: 16px !important;
+    }
+}
+
+
+/* =========================================================
+   VIDEO MOBILE POSTER FIX
+   Hiển thị frame giây 1 ổn định hơn trên mobile
+   ========================================================= */
+
+video {
+    background: #000;
+}
+
+.video-box video,
+.video-cafe video,
+.video-meditation video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.video-meditation {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-meditation video {
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 767px) {
+    .video-box,
+    .video-cafe,
+    .video-meditation {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px auto !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        background: #000 !important;
+    }
+
+    .video-box video,
+    .video-cafe video,
+    .video-meditation video {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
+        display: block !important;
+    }
 }
