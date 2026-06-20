@@ -159,6 +159,21 @@ body {
     display: block;
 }
 
+.video-expert {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-expert video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* FOCUS IMAGE */
 .focus-image {
     display: block;
@@ -254,7 +269,7 @@ body {
 .survey-action {
     max-width: 1170px;
     /* bằng survey-result */
-    margin: 12px auto 0;
+    margin: -16px auto 0;
     display: flex;
     justify-content: flex-end;
 }
@@ -346,6 +361,24 @@ body {
 
     color: #143A2A;
     text-align: left;
+}
+
+.result-headline {
+    margin: 0 0 16px;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #143A2A;
+}
+
+.result-headline:empty {
+    display: none;
+}
+
+.result-highlight {
+    color: #e1251b;
+    font-weight: 800;
 }
 
 #result-list {
@@ -854,7 +887,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
 }
 
 .library-gallery img {
@@ -2080,7 +2113,7 @@ body {
 /* Nút chọn lại căn phải giống bố cục */
 .survey-action {
     max-width: 1180px !important;
-    margin: 12px auto 0 !important;
+    margin: -100px auto 0 !important;
     display: flex !important;
     justify-content: flex-end !important;
 }

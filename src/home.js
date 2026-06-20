@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const resultBox = document.getElementById("survey-result");
+    const resultHeadline = document.getElementById("result-headline");
     const resultList = document.getElementById("result-list");
     const solutionBtn = document.getElementById("show-solution-btn");
     const solutionContent = document.getElementById("solution-content");
@@ -84,6 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
         skill: "👉 Kỹ năng quản lý bản thân: Khảo sát do nhóm thực hiện trên 362 người cho thấy, có 31 người, tương đương 8,56% số người tham gia cũng đang gặp tình trạng giống bạn; họ rất thường xuyên chịu tác động từ kỹ năng quản lý bản thân đến khả năng tập trung trong học tập, công việc và sinh hoạt hằng ngày."
     };
 
+    // Dòng "Kết quả" hiển thị phía trên thống kê khảo sát, tên yếu tố được tô đỏ
+    const headlines = {
+        tech: 'Kết quả: Bạn là người bị ảnh hưởng nhiều nhất bởi yếu tố <span class="result-highlight">công nghệ và mạng xã hội</span> đến khả năng tập trung.',
+        social: 'Kết quả: Bạn là người bị ảnh hưởng nhiều nhất bởi yếu tố <span class="result-highlight">môi trường và tác động xã hội</span> đến khả năng tập trung.',
+        pressure: 'Kết quả: Bạn là người bị ảnh hưởng nhiều nhất bởi yếu tố <span class="result-highlight">tâm lý và áp lực cuộc sống</span> đến khả năng tập trung.',
+        habit: 'Kết quả: Bạn là người bị ảnh hưởng nhiều nhất bởi yếu tố <span class="result-highlight">thói quen và lối sống cá nhân</span> đến khả năng tập trung.',
+        skill: 'Kết quả: Bạn là người bị ảnh hưởng nhiều nhất bởi yếu tố <span class="result-highlight">kỹ năng quản lý bản thân</span> đến khả năng tập trung.'
+    };
+
     const solutions = {
         tech: `
             <h3>Giải pháp: POMODORO - CHIA NHỎ ĐỂ HIỆU QUẢ</h3>
@@ -108,36 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Giữa vô số tác nhân gây xao nhãng, nhiều người trẻ đang chủ động tìm kiếm những không gian phù hợp hơn để học tập và làm việc.
              Việc thay đổi môi trường không chỉ giúp hạn chế các yếu tố gây mất tập trung mà còn tạo điều kiện để duy trì động lực và hình thành thói quen làm việc hiệu quả. 
             Dưới góc nhìn chuyên môn, NCS. Ths Nguyễn Đại Minh - giảng viên Trường Đại học Khoa học Xã hội và Nhân văn chia sẻ:</p>
-        <div class="audio-poster" id="audio-trigger">
-    <img
-        src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781854741/725598475_1628111529320189_4800167062206128149_n_egwc1a.png"
-        alt="Audio poster">
-
-    <div class="audio-overlay">
-        <div class="audio-control">
-
-            <button type="button" class="play-icon" aria-label="Play audio">
-                ▶
-            </button>
-
-            <div class="audio-equalizer">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="video-expert">
+                <video controls playsinline>
+                    <source src="https://res.cloudinary.com/dkmudlfal/video/upload/v1781926380/audio_sz2pdf.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ video.
+                </video>
             </div>
-
-        </div>
-    </div>
-
-    <audio id="expertAudio">
-        <source src="https://res.cloudinary.com/dkmudlfal/video/upload/voice_ko_gian_rljsui.wav" type="audio/wav">
-    </audio>
-</div>
-</div>
             <div id="audio-subtitle" class="audio-subtitle"></div>
                     <p>Mất tập trung đang trở thành vấn đề mà nhiều người trẻ phải đối mặt trong học tập và công việc. Khảo sát trên 362 người của nhóm thực hiện cho thấy 72, 37% người tham gia cho biết họ thường xuyên hoặc rất thường xuyên bị tác động bởi các yếu tố môi trường và xã hội. 
             <p>
@@ -226,7 +212,7 @@ Không gian tại Gạch Coworking sapce
         <div class="expert-quote-card">
             <span class="quote-mark quote-left">“</span>
 
-            <p>
+            <p style="margin-top: 14px;">
                 Khi tình trạng mất tập trung diễn ra thường xuyên và kéo dài, giới trẻ cần ưu tiên rèn luyện
                 các kỹ năng ổn định cảm xúc và lấy lại sự tập trung. Một trong những cách hiệu quả là thực hành
                 các kỹ thuật hít thở sâu. Chẳng hạn phương pháp thiền định, hít vào – nín thở – thở ra hay
@@ -281,7 +267,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 <img class="focus-image2"  src="https://res.cloudinary.com/dkmudlfal/image/upload/v1781319177/image_16_fs5tyi.png" alt="thiền">
 <h4>
 </br>
-“Tại sao khi mất tập trung, thiền lại giúp bạn tập trung trở lại?”
+“Thư giãn và tập thiền vài phút cùng video hướng dẫn bên dưới ngay nhé!”
 </4>
 <div class="video-meditation">
     <iframe
@@ -320,7 +306,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
         <div class="expert-quote-card">
             <span class="quote-mark quote-left">“</span>
 
-            <p>
+            <p style="margin-top: 14px;">
                 Khi tình trạng mất tập trung diễn ra thường xuyên và kéo dài, giới trẻ cần ưu tiên rèn luyện
                 các kỹ năng ổn định cảm xúc và lấy lại sự tập trung. Một trong những cách hiệu quả là thực hành
                 các kỹ thuật hít thở sâu. Chẳng hạn phương pháp thiền định, hít vào – nín thở – thở ra hay
@@ -580,6 +566,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             resultBox.style.display = "none";
             solutionBtn.style.display = "none";
             resultList.innerHTML = "";
+            if (resultHeadline) resultHeadline.innerHTML = "";
             return;
         }
 
@@ -599,6 +586,10 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
     }
 
     function showRankingResult(factor) {
+        if (resultHeadline) {
+            resultHeadline.innerHTML = headlines[factor] || "";
+        }
+
         resultList.innerHTML = `
             <p class="result-item">
                 ${results[factor]}
@@ -656,6 +647,7 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
             resultBox.style.display = "none";
             solutionBtn.style.display = "none";
             resultList.innerHTML = "";
+            if (resultHeadline) resultHeadline.innerHTML = "";
             hideSolution();
         });
     }
@@ -721,80 +713,80 @@ Nhiều người thường bắt đầu với 1–5 phút mỗi ngày trước k
 
     initDragDropRanking();
 
-   /* =========================
-   AUDIO POSTER
-========================= */
+    /* =========================
+    AUDIO POSTER
+ ========================= */
 
-function initAudioPoster() {
-    const audioPoster = document.getElementById("audio-trigger");
-    const expertAudio = document.getElementById("expertAudio");
-    const playIcon = document.querySelector(".play-icon");
+    function initAudioPoster() {
+        const audioPoster = document.getElementById("audio-trigger");
+        const expertAudio = document.getElementById("expertAudio");
+        const playIcon = document.querySelector(".play-icon");
 
-    if (!audioPoster || !expertAudio || !playIcon) return;
+        if (!audioPoster || !expertAudio || !playIcon) return;
 
-    audioPoster.addEventListener("click", () => {
-        if (expertAudio.paused) {
-            expertAudio.play();
+        audioPoster.addEventListener("click", () => {
+            if (expertAudio.paused) {
+                expertAudio.play();
 
+                audioPoster.classList.add("playing");
+                playIcon.textContent = "❚❚";
+            } else {
+                expertAudio.pause();
+
+                audioPoster.classList.remove("playing");
+                playIcon.textContent = "▶";
+            }
+        });
+
+        expertAudio.addEventListener("play", () => {
             audioPoster.classList.add("playing");
             playIcon.textContent = "❚❚";
-        } else {
-            expertAudio.pause();
+        });
 
+        expertAudio.addEventListener("pause", () => {
             audioPoster.classList.remove("playing");
             playIcon.textContent = "▶";
+        });
+
+        expertAudio.addEventListener("ended", () => {
+            audioPoster.classList.remove("playing");
+            playIcon.textContent = "▶";
+        });
+    }
+    document.addEventListener("click", function (e) {
+        const poster = e.target.closest(".audio-poster");
+        if (!poster) return;
+
+        const audio = poster.querySelector("audio");
+        const icon = poster.querySelector(".play-icon");
+
+        if (!audio || !icon) return;
+
+        if (audio.paused) {
+            audio.play().then(() => {
+                poster.classList.add("playing");
+                icon.textContent = "❚❚";
+            }).catch(err => {
+                console.log("Audio play error:", err);
+            });
+        } else {
+            audio.pause();
+            poster.classList.remove("playing");
+            icon.textContent = "▶";
         }
     });
 
-    expertAudio.addEventListener("play", () => {
-        audioPoster.classList.add("playing");
-        playIcon.textContent = "❚❚";
-    });
+    document.addEventListener("ended", function (e) {
+        if (e.target.tagName !== "AUDIO") return;
 
-    expertAudio.addEventListener("pause", () => {
-        audioPoster.classList.remove("playing");
-        playIcon.textContent = "▶";
-    });
+        const poster = e.target.closest(".audio-poster");
+        if (!poster) return;
 
-    expertAudio.addEventListener("ended", () => {
-        audioPoster.classList.remove("playing");
-        playIcon.textContent = "▶";
-    });
-}
-document.addEventListener("click", function (e) {
-    const poster = e.target.closest(".audio-poster");
-    if (!poster) return;
+        const icon = poster.querySelector(".play-icon");
 
-    const audio = poster.querySelector("audio");
-    const icon = poster.querySelector(".play-icon");
-
-    if (!audio || !icon) return;
-
-    if (audio.paused) {
-        audio.play().then(() => {
-            poster.classList.add("playing");
-            icon.textContent = "❚❚";
-        }).catch(err => {
-            console.log("Audio play error:", err);
-        });
-    } else {
-        audio.pause();
         poster.classList.remove("playing");
-        icon.textContent = "▶";
-    }
-});
-
-document.addEventListener("ended", function (e) {
-    if (e.target.tagName !== "AUDIO") return;
-
-    const poster = e.target.closest(".audio-poster");
-    if (!poster) return;
-
-    const icon = poster.querySelector(".play-icon");
-
-    poster.classList.remove("playing");
-    if (icon) icon.textContent = "▶";
-}, true);
+        if (icon) icon.textContent = "▶";
+    }, true);
 
 
 
