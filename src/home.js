@@ -180,9 +180,9 @@ Những giá sách trải dài tạo nên khung cảnh đặc trưng của thư 
 </p>
 
 
-        <h4 class="tile">Co-working Space – Không gian làm việc chuyên nghiệp</h4>
+        <h4 class="tile">Coworking Space – Không gian làm việc chuyên nghiệp</h4>
 
-        <p>Với những người trẻ cần một nơi để học tập và làm việc nghiêm túc, co-working space là một lựa chọn rất phù hợp. Không gian này tạo cảm giác thoải mái, linh hoạt giống như quán cà phê, nhưng vẫn giữ được sự chuyên nghiệp và ổn định như một văn phòng làm việc.</p>
+        <p>Với những người trẻ cần một nơi để học tập và làm việc nghiêm túc, coworking space là một lựa chọn rất phù hợp. Không gian này tạo cảm giác thoải mái, linh hoạt giống như quán cà phê, nhưng vẫn giữ được sự chuyên nghiệp và ổn định như một văn phòng làm việc.</p>
 
         <p>Bạn nên chọn coworking space thay vì quán cà phê khi cần tập trung trong nhiều giờ liên tục. Đây là lựa chọn phù hợp nếu bạn phải học bài, làm deadline, xử lý công việc quan trọng hoặc cần một môi trường ít bị gián đoạn bởi tiếng nói chuyện, âm nhạc hay người ra vào liên tục. Coworking space cũng phù hợp khi bạn cần một không gian ổn định hơn quán cà phê. Thay vì phải lo tìm chỗ ngồi, ổ cắm điện, mạng wifi hay không gian đủ yên tĩnh, bạn có thể làm việc trong một môi trường được thiết kế sẵn cho việc học tập và làm việc. Ảnh 360° dưới đây sẽ mang đến góc nhìn trực quan về một coworking space điển hình dành cho học tập và làm việc.</p>
         <div class="momento360-grid">
@@ -199,8 +199,8 @@ Những giá sách trải dài tạo nên khung cảnh đặc trưng của thư 
 Không gian tại Gạch Coworking sapce 
         </p>
         
-        <p>Nếu bạn thường xuyên phải tham gia họp online, học trực tuyến hoặc gọi điện trao đổi công việc, co-working space sẽ giúp bạn chuyên nghiệp hơn. Không gian yên tĩnh, riêng tư và ít tiếng ồn giúp cuộc gọi rõ ràng hơn, đồng thời hạn chế tối đa các yếu tố gây xao nhãng.
-        Những lợi ích nổi bật của co-working space có thể kể đến như: không gian yên tĩnh, wifi ổn định, ghế ngồi công thái học, bàn làm việc phù hợp và môi trường tập trung cao. Nhờ đó, bạn có thể học tập, làm việc trong thời gian dài mà vẫn cảm thấy thoải mái và hiệu quả hơn.</p>
+        <p>Nếu bạn thường xuyên phải tham gia họp online, học trực tuyến hoặc gọi điện trao đổi công việc, coworking space sẽ giúp bạn chuyên nghiệp hơn. Không gian yên tĩnh, riêng tư và ít tiếng ồn giúp cuộc gọi rõ ràng hơn, đồng thời hạn chế tối đa các yếu tố gây xao nhãng.
+        Những lợi ích nổi bật của coworking space có thể kể đến như: không gian yên tĩnh, wifi ổn định, ghế ngồi công thái học, bàn làm việc phù hợp và môi trường tập trung cao. Nhờ đó, bạn có thể học tập, làm việc trong thời gian dài mà vẫn cảm thấy thoải mái và hiệu quả hơn.</p>
 
 
         `,
@@ -237,7 +237,7 @@ Không gian tại Gạch Coworking sapce
    Khi nhắc đến thiền, nhiều người thường liên tưởng đến những khoảng lặng tuyệt đối hay hình ảnh ngồi nhắm mắt giữa không gian tĩnh mịch. Tuy nhiên, thiền không chỉ là một tư thế hay một nghi thức mang màu sắc tôn giáo. Trong Phật giáo, thiền được xem là một phần của quá trình tu tập, giúp con người giữ tâm trí tĩnh lặng và quan sát bản thân rõ ràng hơn.
    </p>
    <p>
-   Trong cuốn Thiền là gì?, Jiddu Krishnamurti cho rằng thiền là “nhìn thế giới như nó đang là, chứ không phải như ta muốn nó phải là”. Theo cách hiểu phổ biến hiện nay, thiền là quá trình đưa sự chú ý trở về hiện tại thông qua hơi thở, cảm giác cơ thể hoặc việc quan sát suy nghĩ một cách tỉnh thức.
+   Trong cuốn "Thiền là gì?", Jiddu Krishnamurti cho rằng thiền là “nhìn thế giới như nó đang là, chứ không phải như ta muốn nó phải là”. Theo cách hiểu phổ biến hiện nay, thiền là quá trình đưa sự chú ý trở về hiện tại thông qua hơi thở, cảm giác cơ thể hoặc việc quan sát suy nghĩ một cách tỉnh thức.
    <p/>
    <p>
    Ngày nay, thiền không chỉ gắn với đời sống tâm linh mà còn dần trở thành một phương pháp được nhiều người lựa chọn để giảm căng thẳng và tìm lại sự tập trung giữa nhịp sống hiện đại nhiều xao nhãng. Trong bối cảnh điện thoại, mạng xã hội và lượng thông tin liên tục bủa vây, nhu cầu tìm kiếm những khoảng nghỉ cho tâm trí cũng ngày càng phổ biến, đặc biệt ở người trẻ.
